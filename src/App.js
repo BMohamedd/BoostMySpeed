@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import HomePage from "./components/frontPage/HomePage";
 import Analize from "./components/analizePage/Analize";
-import "./app.css";
+import "./App.css";
 import StartDeepScan from "./components/DeepScanPage/StartDeepScan";
 
 function App() {
