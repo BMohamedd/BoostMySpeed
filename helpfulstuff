@@ -1,0 +1,10 @@
+<!-- thank me later ;) -->
+
+lighthouse general docs =>
+https://github.com/GoogleChrome/lighthouse/blob/master/docs/readme.md#using-programmatically
+
+litehouse response object docs =>
+https://github.com/GoogleChrome/lighthouse/blob/master/docs/understanding-results.md#categories
+
+lighthouse config docs =>
+https://github.com/GoogleChrome/lighthouse/blob/master/docs/configuration.md
