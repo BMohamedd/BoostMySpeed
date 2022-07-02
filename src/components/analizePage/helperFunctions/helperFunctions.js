@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const backEndUrl = "http://localhost:8000/report?url=";
+const backEndUrl = "https://boostmyspeed.herokuapp.com/report?url=";
 
 export const finalUrlCheck = (url) => {
   // checks if the url exists
