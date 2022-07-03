@@ -4,6 +4,8 @@ import HomePage from "./components/frontPage/HomePage";
 import Analize from "./components/analizePage/Analize";
 import "./App.css";
 import StartDeepScan from "./components/DeepScanPage/StartDeepScan";
+import HowItWorks from "./components/howItWorks/HowItWorks";
+import Contact from "./components/ContactPage/Contact";
 
 function App() {
   return (
@@ -11,7 +13,9 @@ function App() {
       <Routes>
         <Route index element={<HomePage />} />
         <Route path="/start-deep-scan" element={<StartDeepScan />} />
-        <Route path="/analize/:url" element={<Analize />} />
+        <Route path="/how-it-works" element={<HowItWorks />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/analize/:url/*" element={<Analize />} />
         <Route path="*" element={<HomePage />}></Route>
       </Routes>
     </BrowserRouter>

@@ -38,7 +38,10 @@ function NavBar() {
               {/* how it works button */}
               <Tooltip title="how it works">
                 <Paper elevation={3}>
-                  <IconButton size="small">
+                  <IconButton
+                    size="small"
+                    onClick={() => navigate("/how-it-works")}
+                  >
                     <HelpOutlineIcon />
                   </IconButton>
                 </Paper>
@@ -54,7 +57,7 @@ function NavBar() {
               {/* contact button */}
               <Tooltip title="contact">
                 <Paper elevation={3}>
-                  <IconButton size="small">
+                  <IconButton size="small" onClick={() => navigate("/contact")}>
                     <AddIcCallIcon />
                   </IconButton>
                 </Paper>
