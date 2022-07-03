@@ -232,7 +232,12 @@ function ScreenShots({ report, passed, failed }) {
             GO BACK TO HOME PAGE
           </Typography>
         </Button>
-        <Button disableElevation color="secondary" size="large">
+        <Button
+          onClick={() => navigate("/contact")}
+          disableElevation
+          color="secondary"
+          size="large"
+        >
           <Typography sx={{ fontWeight: "bold" }}>CONTACT US</Typography>{" "}
         </Button>
       </Stack>
