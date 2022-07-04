@@ -1,11 +1,24 @@
 import React from "react";
 import { Grid, Container, Typography, Stack, Button } from "@mui/material";
 import heroSVG from "../../../assets/hero.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import SpeedIcon from "@mui/icons-material/Speed";
 
 function Hero() {
+  const location = useLocation();
+  React.useEffect(() => {
+    if (location.pathname === "/start-deep-scan") {
+      return scrollToSearch();
+    }
+  }, []);
   const navigate = useNavigate();
+  const scrollToSearch = () => {
+    const a = document.createElement("a");
+    a.setAttribute("href", "#search-id");
+    const body = document.querySelector("body");
+    body.append(a);
+    a.click();
+  };
   return (
     <Container
       maxWidth="xl"
@@ -18,9 +31,6 @@ function Hero() {
     >
       <Grid container>
         <Grid item xs={12} md={7}>
-          <Typography variant="h4" sx={{ color: "gray", fontWeight: "bolder" }}>
-            It's All About Speed These Days
-          </Typography>
           <Typography
             variant="h2"
             my=".5em"
@@ -46,7 +56,7 @@ function Hero() {
               variant="contained"
               disableElevation
               color="secondary"
-              onClick={() => navigate("/start-deep-scan")}
+              onClick={scrollToSearch}
               size="large"
               endIcon={<SpeedIcon />}
             >

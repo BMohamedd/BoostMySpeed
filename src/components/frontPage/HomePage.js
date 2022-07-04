@@ -9,7 +9,9 @@ function HomePage() {
     <div>
       <NavBar />
       <Hero />
-      <SearchArea />
+      <div id="search-id">
+        <SearchArea />
+      </div>
       <About />
       <Footer />
     </div>

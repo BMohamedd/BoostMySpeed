@@ -26,45 +26,12 @@ function NavBar() {
         {/* NAVIGATION ITEMS  AND CALL TO ACTION */}
         <Grid
           sx={{
-            flexDirection: { xs: "row-reverse", sm: "row" },
+            flexDirection: { xs: "row" },
             justifyContent: { xs: "space-evenly", sm: "space-between" },
             alignItems: "center",
           }}
           container
         >
-          {/* NAVIGATION ITEMS */}
-          <Grid item>
-            <Stack spacing={2} direction="row">
-              {/* how it works button */}
-              <Tooltip title="how it works">
-                <Paper elevation={3}>
-                  <IconButton
-                    size="small"
-                    onClick={() => navigate("/how-it-works")}
-                  >
-                    <HelpOutlineIcon />
-                  </IconButton>
-                </Paper>
-              </Tooltip>
-              {/* about button */}
-              <Tooltip title="About">
-                <Paper elevation={3}>
-                  <IconButton size="small">
-                    <PersonIcon />
-                  </IconButton>
-                </Paper>
-              </Tooltip>
-              {/* contact button */}
-              <Tooltip title="contact">
-                <Paper elevation={3}>
-                  <IconButton size="small" onClick={() => navigate("/contact")}>
-                    <AddIcCallIcon />
-                  </IconButton>
-                </Paper>
-              </Tooltip>
-            </Stack>
-          </Grid>
-
           {/* LOGO */}
           <Grid item>
             <Toolbar>
@@ -79,7 +46,7 @@ function NavBar() {
           </Grid>
 
           {/* CALL TO ACTION */}
-          <Grid item sx={{ display: { xs: "none", sm: "inline" } }}>
+          <Grid item>
             <Button
               variant="outlined"
               disableElevation

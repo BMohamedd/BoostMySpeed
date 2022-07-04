@@ -1,7 +1,6 @@
 import React from "react";
 import NavBar from "../other/NavBar";
 import Footer from "../frontPage/homePageSections/Footer";
-import "./Contact.css";
 import { TextField, Typography, Button, Stack } from "@mui/material";
 import { Container } from "@mui/system";
 import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
@@ -30,7 +29,7 @@ function Contact() {
         </Stack>
         {/* we are submitting this form using formsubmit visit their site for more info "formsubmit.co" */}
         <form
-          action="https://formsubmit.co/f31d88396e2e71eef7f8ba4d48e1613e"
+          action="https://formsubmit.co/idasgamification@gmail.com"
           method="POST"
         >
           <Stack spacing={3}>

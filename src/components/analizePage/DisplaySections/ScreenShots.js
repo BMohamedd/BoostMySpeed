@@ -20,8 +20,8 @@ import HomeIcon from "@mui/icons-material/Home";
 import { useNavigate } from "react-router-dom";
 
 function ScreenShots({ report, passed, failed }) {
-  const [showPassed, ChangeShowPassed] = React.useState(false);
-  const [showFailed, ChangeshowFailed] = React.useState(false);
+  const [showPassed, ChangeShowPassed] = React.useState(true);
+  const [showFailed, ChangeshowFailed] = React.useState(true);
   const navigate = useNavigate();
 
   return (
@@ -176,7 +176,11 @@ function ScreenShots({ report, passed, failed }) {
         {passed.map((passedTest) => {
           return (
             <span>
-              <PassedFailedTest passed={true} testName={passedTest.title} />
+              <PassedFailedTest
+                passed={true}
+                testName={passedTest.title}
+                description={passedTest.description}
+              />
               <Divider />
             </span>
           );
@@ -206,7 +210,11 @@ function ScreenShots({ report, passed, failed }) {
         {failed.map((failedTest) => {
           return (
             <span>
-              <PassedFailedTest passed={false} testName={failedTest.title} />
+              <PassedFailedTest
+                passed={false}
+                testName={failedTest.title}
+                description={failedTest.description}
+              />
               <Divider />
             </span>
           );

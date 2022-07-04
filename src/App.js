@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={<HomePage />} />
-        <Route path="/start-deep-scan" element={<StartDeepScan />} />
+        <Route path="/start-deep-scan" element={<HomePage />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/analize/:url/*" element={<Analize />} />

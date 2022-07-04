@@ -1,4 +1,4 @@
-import { Box, Stack, Typography, Grid } from "@mui/material";
+import { Box, Stack, Typography, Grid, LinearProgress } from "@mui/material";
 import React from "react";
 import Logo from "../../assets/Logo.png";
 import working from "../../assets/workingOnIt.svg";
@@ -10,7 +10,7 @@ function Loading() {
   const [num, changeNum] = React.useState(0);
   const toSay = [
     "BOOSTMYSPEED is gathering information to calculate your score.",
-    "almost there! BOOSTMYSPEED is creating Your report",
+    "Almost there! BOOSTMYSPEED is creating Your report",
     "NDTV, one of India's leading news stations and websites, improved LCP by 55% and saw a 50% reduction in bounce rate.",
     "iCook improved CLS by 15% and saw a 10% increase in ad revenue as a result.",
     "Tokopedia improved LCP by 55% and saw a 23% increase in average session duration.",
@@ -27,51 +27,64 @@ function Loading() {
     return () => clearInterval(intervalID);
   });
   return (
-    <Container
-      sx={{
-        paddingTop: "3em",
-        display: "flex",
-        position: "relative",
-        flexDirection: "column",
-        gap: "10em",
-      }}
-      maxWidth="xl"
-    >
-      <Stack alignItems="center">
-        <img src={Logo} width="25px" alt="logo" />
-        <Typography color="gray">BOOSTMYSPEED</Typography>
-      </Stack>
-      <Grid container justifyContent="space-evenly">
-        <Grid item sm={12} md={4} lg={5}>
-          {/* text */}
-          <Typography
-            variant="h3"
-            color="gray"
-            sx={{ display: "flex", alignItems: "center", gap: "10px" }}
-          >
-            <span>Working On It...</span>
-          </Typography>
-          <Typography
-            color="gray"
-            sx={{ width: { xs: "100%", sm: "70%", md: "auto" } }}
-          >
-            {dialog}
-          </Typography>
+    <div style={{ position: "relative" }}>
+      <Container
+        sx={{
+          paddingTop: "3em",
+          display: "flex",
+          flexDirection: "column",
+          gap: "10em",
+        }}
+        maxWidth="xl"
+      >
+        <Stack alignItems="center">
+          <img src={Logo} width="25px" alt="logo" />
+          <Typography color="gray">BOOSTMYSPEED</Typography>
+        </Stack>
+        <Grid container justifyContent="space-evenly">
+          <Grid item sm={12} md={4} lg={5}>
+            {/* text */}
+            <Typography
+              variant="h3"
+              color="gray"
+              sx={{ display: "flex", alignItems: "center", gap: "10px" }}
+            >
+              <span>Analyzing...</span>
+            </Typography>
+            <Typography
+              color="gray"
+              sx={{ width: { xs: "100%", sm: "70%", md: "auto" } }}
+            >
+              {dialog}
+            </Typography>
+          </Grid>
+          {/* img */}
+          <Grid item>
+            <Box
+              sx={{
+                width: { xs: "0px", md: "250px", lg: "400px", xl: "600px" },
+              }}
+            >
+              <img src={working} alt="working" width="100%" />
+            </Box>
+          </Grid>
         </Grid>
-        {/* img */}
-        <Grid item>
-          <Box
-            sx={{ width: { xs: "0px", md: "250px", lg: "400px", xl: "600px" } }}
-          >
-            <img src={working} alt="working" width="100%" />
-          </Box>
-        </Grid>
-      </Grid>
-      <Typography color="gray" textAlign="center">
-        Copyright &copy;
-        {new Date().getFullYear() + " "} - BoostMySpeed
-      </Typography>
-    </Container>
+        <Typography color="gray" textAlign="center">
+          Copyright &copy;
+          {new Date().getFullYear() + " "} - BoostMySpeed
+        </Typography>
+        <LinearProgress
+          color="secondary"
+          sx={{
+            width: "100vw",
+            position: "absolute",
+            top: "0",
+            left: "0",
+            height: "10px",
+          }}
+        />
+      </Container>
+    </div>
   );
 }
 

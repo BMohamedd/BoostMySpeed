@@ -4,7 +4,7 @@ import {
   Typography,
   Box,
   Grid,
-  Paper,
+  LinearProgress,
   Tooltip,
 } from "@mui/material";
 import React from "react";
@@ -12,6 +12,7 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import CircleIcon from "@mui/icons-material/Circle";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import ProgressBar from "../../other/progressBar/ProgressBar";
 
 function Categories({ values, ScreenShot }) {
   // T stands for title :)
@@ -39,21 +40,6 @@ function Categories({ values, ScreenShot }) {
           alignItems="center"
           sx={{ width: { xm: "80%", sm: "25%", md: "25%", lg: "15%" } }}
         >
-          <CircularProgressbar
-            value={Math.round(values.performance.score * 100)}
-            text={`${Math.round(values.performance.score * 100)}%`}
-            background
-            styles={buildStyles({
-              backgroundColor: "#fff",
-              pathColor:
-                values.performance.score * 100 < 50
-                  ? "#ef5350"
-                  : values.performance.score * 100 > 90
-                  ? "#66bb6a"
-                  : "#ffa726",
-            })}
-            strokeWidth={5}
-          />
           <Typography
             sx={{ display: "flex", alignItems: "center", gap: "5px" }}
           >
@@ -62,6 +48,7 @@ function Categories({ values, ScreenShot }) {
               <HelpOutlineIcon fontSize="10px" />
             </Tooltip>
           </Typography>
+          <ProgressBar progress={Math.round(values.performance.score * 100)} />
         </Stack>
         {/* accessibility */}
         <Stack
@@ -69,21 +56,6 @@ function Categories({ values, ScreenShot }) {
           alignItems="center"
           sx={{ width: { xm: "80%", sm: "25%", md: "25%", lg: "15%" } }}
         >
-          <CircularProgressbar
-            value={Math.round(values.accessibility.score * 100)}
-            text={`${Math.round(values.accessibility.score * 100)}%`}
-            background
-            styles={buildStyles({
-              backgroundColor: "#fff",
-              pathColor:
-                values.accessibility.score * 100 < 50
-                  ? "#ef5350"
-                  : values.accessibility.score * 100 > 90
-                  ? "#66bb6a"
-                  : "#ffa726",
-            })}
-            strokeWidth={5}
-          />
           <Typography
             sx={{ display: "flex", alignItems: "center", gap: "5px" }}
           >
@@ -92,6 +64,9 @@ function Categories({ values, ScreenShot }) {
               <HelpOutlineIcon fontSize="10px" />
             </Tooltip>
           </Typography>
+          <ProgressBar
+            progress={Math.round(values.accessibility.score * 100)}
+          />
         </Stack>
         {/* seo */}
         <Stack
@@ -99,29 +74,19 @@ function Categories({ values, ScreenShot }) {
           alignItems="center"
           sx={{ width: { xm: "80%", sm: "25%", md: "25%", lg: "15%" } }}
         >
-          <CircularProgressbar
-            value={Math.round(values.seo.score * 100)}
-            text={`${Math.round(values.seo.score * 100)}%`}
-            background
-            styles={buildStyles({
-              backgroundColor: "#fff",
-              pathColor:
-                values.seo.score * 100 < 50
-                  ? "#ef5350"
-                  : values.seo.score * 100 > 90
-                  ? "#66bb6a"
-                  : "#ffa726",
-            })}
-            strokeWidth={5}
-          />
           <Typography
-            sx={{ display: "flex", alignItems: "center", gap: "5px" }}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: "5px",
+            }}
           >
             <strong>SEO</strong>
             <Tooltip title={seoT}>
               <HelpOutlineIcon fontSize="10px" />
             </Tooltip>
           </Typography>
+          <ProgressBar progress={Math.round(values.seo.score * 100)} />
         </Stack>
       </Stack>
       {/* pic & cirle */}
@@ -176,17 +141,17 @@ function Categories({ values, ScreenShot }) {
           >
             <Stack direction="row" alignItems="center" spacing={1}>
               <CircleIcon sx={{ color: "#ef5350" }} fontSize="1em" />
-              <Typography variant="body2">0 - 50%</Typography>
+              <Typography variant="body2">Bad</Typography>
             </Stack>
             <Divider orientation="vertical" />
             <Stack direction="row" alignItems="center" spacing={1}>
               <CircleIcon sx={{ color: "#ffa726" }} fontSize="1em" />
-              <Typography variant="body2">50 - 90%</Typography>
+              <Typography variant="body2">Good</Typography>
             </Stack>
             <Divider orientation="vertical" />
             <Stack direction="row" alignItems="center" spacing={1}>
               <CircleIcon sx={{ color: "#66bb6a" }} fontSize="1em" />
-              <Typography variant="body2">90 - 100%</Typography>
+              <Typography variant="body2">Great</Typography>
             </Stack>
           </Stack>
         </Stack>
@@ -198,7 +163,7 @@ function Categories({ values, ScreenShot }) {
           spacing={2}
           sx={{
             width: { xs: "50%", sm: "25%", md: "15%", lg: "150px" },
-            mt: { xs: "3em", sm: "0" },
+            mt: { xs: "7em", sm: "0" },
           }}
         >
           <img

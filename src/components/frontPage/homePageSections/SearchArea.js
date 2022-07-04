@@ -43,8 +43,8 @@ function SearchArea() {
   };
 
   return (
-    <Box sx={{ background: "#ddd", py: "2em" }}>
-      <Container maxWidth="xl">
+    <Box>
+      <Container maxWidth="xl" sx={{ paddingTop: "4em" }}>
         <Typography
           variant="h3"
           sx={{
@@ -80,7 +80,7 @@ function SearchArea() {
         >
           <ElectricBoltRoundedIcon color="secondary" />
           <InputBase
-            placeholder="Analyze This Website | exaple: Google.com"
+            placeholder="Enter URL to Analyze …"
             onChange={handleChangeURL}
             onKeyDown={handleSubmitWithEnter}
             sx={{
