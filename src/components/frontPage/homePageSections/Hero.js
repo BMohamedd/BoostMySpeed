@@ -8,7 +8,7 @@ function Hero() {
     <Container
       maxWidth="xl"
       sx={{
-        my: { xs: "5em", md: "none" },
+        marginTop: { xs: "10em", sm: "5em", md: "5em", lg: "0em" },
         minHeight: { xm: "fit-content", md: "100vh" },
         display: "flex",
         alignItems: "center",

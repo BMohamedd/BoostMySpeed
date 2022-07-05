@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Container,
-  Typography,
-  Stack,
-  Alert,
-  AlertTitle,
-  Divider,
-} from "@mui/material";
+import { Container, Typography, Stack, Divider } from "@mui/material";
 import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
 import Categories from "./DisplaySections/Categories";
 import ImportantInformation from "./DisplaySections/ImportantInformation";
@@ -16,7 +9,10 @@ function DisplayAnaliysis({ passed, failed, fullReport }) {
   console.log("Analiysis completed");
   console.log(passed, failed, fullReport);
   return (
-    <Container maxWidth="xl" sx={{ marginTop: "2em" }}>
+    <Container
+      maxWidth="xl"
+      sx={{ marginTop: { xs: "10em", sm: "5em", md: "5em" } }}
+    >
       {/* header */}
       <Typography sx={{ fontSize: { xs: "1em", md: "1.5em" } }}>
         Speed test results for:{" "}

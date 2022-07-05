@@ -42,12 +42,12 @@ function Footer() {
                   textDecoration: "none",
                 }}
               >
-                BoostMySpeed
+                Speedyourweb
               </Typography>
             </Box>
             <Typography color="white">
               Copyright &copy;
-              {new Date().getFullYear() + " "} - BoostMySpeed
+              {new Date().getFullYear() + " "} - Speedyourweb
             </Typography>
           </Stack>
           <a

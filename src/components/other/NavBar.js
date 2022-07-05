@@ -35,13 +35,21 @@ function NavBar() {
           </Grid>
 
           {/* CALL TO ACTION */}
-          <Grid item>
+          <Grid
+            item
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: ".5em",
+              justifyContent: "center",
+            }}
+          >
             {/* contact */}
             <Button
               disableElevation
               variant="contained"
               color="secondary"
-              size="large"
+              size="small"
               onClick={() => navigate("/contact")}
               endIcon={<HandymanIcon />}
             >

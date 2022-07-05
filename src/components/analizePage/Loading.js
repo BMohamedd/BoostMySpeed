@@ -6,7 +6,7 @@ import { Container } from "@mui/system";
 
 function Loading() {
   console.log("loading...");
-  const [dialog, changeDialog] = React.useState("BOOSTMYSPEED is warming up");
+  const [dialog, changeDialog] = React.useState("Speedyourweb is warming up");
   const [num, changeNum] = React.useState(0);
   const toSay = [
     "1-second delay decreases customer satisfaction by 16%.",
@@ -14,8 +14,8 @@ function Loading() {
     "40% will abandon a web page if it takes more than 3 seconds to load",
     "1-5 seconds load time increase the bounce rate probability by 90%",
     "On annual basis, 1-second delay can lead to $2.5 million in missed revenue if your shop generates $100,000 per day.",
-    "BOOSTMYSPEED is gathering information to calculate your score.",
-    "Almost there! BOOSTMYSPEED is creating Your report",
+    "Speedyourweb is gathering information to calculate your score.",
+    "Almost there! Speedyourweb is creating Your report",
   ];
   React.useEffect(() => {
     const intervalID = setInterval(() => {
