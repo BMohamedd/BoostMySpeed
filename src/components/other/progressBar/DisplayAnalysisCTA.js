@@ -5,12 +5,13 @@ import { useNavigate } from "react-router-dom";
 
 function DisplayAnalysisCTA({ progress }) {
   const navigate = useNavigate();
+
   const text =
     progress < 50
       ? "Your Site Is Much Slower Than Other Sites"
       : progress > 90
-      ? "Your Site Is Good Compared To Most Sites"
-      : "Your Site Is Slower Than Other Sites";
+      ? "Well done! Your performance score is great"
+      : "Well done! Your performance score is good";
   return (
     <Stack>
       <Typography sx={{ fontSize: { xs: "3em" } }}>

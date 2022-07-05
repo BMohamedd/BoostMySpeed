@@ -9,14 +9,13 @@ function Loading() {
   const [dialog, changeDialog] = React.useState("BOOSTMYSPEED is warming up");
   const [num, changeNum] = React.useState(0);
   const toSay = [
+    "1-second delay decreases customer satisfaction by 16%.",
+    "47% of people expect a web page to load in 2 seconds or less",
+    "40% will abandon a web page if it takes more than 3 seconds to load",
+    "1-5 seconds load time increase the bounce rate probability by 90%",
+    "On annual basis, 1-second delay can lead to $2.5 million in missed revenue if your shop generates $100,000 per day.",
     "BOOSTMYSPEED is gathering information to calculate your score.",
     "Almost there! BOOSTMYSPEED is creating Your report",
-    "NDTV, one of India's leading news stations and websites, improved LCP by 55% and saw a 50% reduction in bounce rate.",
-    "iCook improved CLS by 15% and saw a 10% increase in ad revenue as a result.",
-    "Tokopedia improved LCP by 55% and saw a 23% increase in average session duration.",
-    "Vodafone improved their LCP by 31%, resulting in an 8% increase in sales, a 15% increase in their lead to visit rate, and an 11% increase in their cart to visit rate.",
-    "Yelp reduced First Contentful Paint (75th percentile) by 45% and Yelp Page Complete (75th percentile) by 25% and saw a 15% improvement in their conversion rate.",
-    "After making improvements to multiple performance metrics (including LCP, CLS and Long Task time), Agrofy saw a 76% reduction in their abandonment rate and a significant boost in engagement.",
   ];
   React.useEffect(() => {
     const intervalID = setInterval(() => {
