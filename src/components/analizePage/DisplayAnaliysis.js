@@ -18,10 +18,10 @@ function DisplayAnaliysis({ passed, failed, fullReport }) {
   return (
     <Container maxWidth="xl" sx={{ marginTop: "2em" }}>
       {/* header */}
-      <Alert severity="success">
-        <AlertTitle>Success!</AlertTitle>
-        Showing results for URL: <strong>{fullReport.data.finalUrl}</strong>
-      </Alert>
+      <Typography sx={{ fontSize: { xs: "1em", md: "1.5em" } }}>
+        Speed test results for:{" "}
+        <strong style={{ color: "#9c27b0" }}>{fullReport.data.finalUrl}</strong>
+      </Typography>
       <Stack
         sx={{ borderBottom: "2px solid #9c27b0", width: "fit-content" }}
         direction="row"

@@ -8,9 +8,8 @@ function HomePage() {
   return (
     <div>
       <NavBar />
-      <Hero />
       <div id="search-id">
-        <SearchArea />
+        <Hero />
       </div>
       <About />
       <Footer />

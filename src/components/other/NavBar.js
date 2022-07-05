@@ -1,25 +1,14 @@
 import React from "react";
-import {
-  AppBar,
-  Button,
-  Toolbar,
-  Grid,
-  Stack,
-  Paper,
-  Tooltip,
-  Typography,
-  IconButton,
-} from "@mui/material";
+import { AppBar, Button, Toolbar, Grid, Typography } from "@mui/material";
 import { Container } from "@mui/system";
-import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
-import AddIcCallIcon from "@mui/icons-material/AddIcCall";
-import PersonIcon from "@mui/icons-material/Person";
-import SpeedIcon from "@mui/icons-material/Speed";
+import HandymanIcon from "@mui/icons-material/Handyman";
 import Logo from "../../assets/Logo.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation, Navigate } from "react-router-dom";
 
 function NavBar() {
   const navigate = useNavigate();
+  const location = useLocation();
+
   return (
     <AppBar sx={{ background: "#fff", color: "#000" }}>
       <Container maxWidth="xl">
@@ -47,13 +36,34 @@ function NavBar() {
 
           {/* CALL TO ACTION */}
           <Grid item>
+            {/* contact */}
             <Button
-              variant="outlined"
+              disableElevation
+              variant="contained"
+              color="secondary"
+              size="large"
+              onClick={() => navigate("/contact")}
+              endIcon={<HandymanIcon />}
+            >
+              <strong>Fix My Site speed</strong>
+            </Button>
+            {/* deep scan */}
+            <Button
               disableElevation
               color="secondary"
               size="large"
-              onClick={() => navigate("/start-deep-scan")}
-              endIcon={<SpeedIcon />}
+              sx={{
+                marginLeft: { md: "1em" },
+              }}
+              onClick={() => {
+                if (location.pathname === "/start-deep-scan") {
+                  window.scrollTo(0, 0);
+                } else if (location.pathname === "/") {
+                  window.scrollTo(0, 0);
+                } else {
+                  navigate("/start-deep-scan");
+                }
+              }}
             >
               <Typography sx={{ fontWeight: "bold" }}>
                 START DEEP SCAN

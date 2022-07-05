@@ -1,24 +1,9 @@
 import React from "react";
 import { Grid, Container, Typography, Stack, Button } from "@mui/material";
 import heroSVG from "../../../assets/hero.svg";
-import { useNavigate, useLocation } from "react-router-dom";
-import SpeedIcon from "@mui/icons-material/Speed";
+import SearchArea from "./SearchArea";
 
 function Hero() {
-  const location = useLocation();
-  React.useEffect(() => {
-    if (location.pathname === "/start-deep-scan") {
-      return scrollToSearch();
-    }
-  }, []);
-  const navigate = useNavigate();
-  const scrollToSearch = () => {
-    const a = document.createElement("a");
-    a.setAttribute("href", "#search-id");
-    const body = document.querySelector("body");
-    body.append(a);
-    a.click();
-  };
   return (
     <Container
       maxWidth="xl"
@@ -42,37 +27,10 @@ function Hero() {
             Today!
           </Typography>
           <Typography variant="h5" width="70%">
-            If you want to increase your conversion, all you have to do is Click
-            the button.
+            See how your site performs, reveal why it's slow and discover
+            optimization opportunities.
           </Typography>
-          <Stack
-            sx={{
-              flexDirection: { xs: "column", sm: "row" },
-            }}
-            alignItems="center"
-            mt="2em"
-          >
-            <Button
-              variant="contained"
-              disableElevation
-              color="secondary"
-              onClick={scrollToSearch}
-              size="large"
-              endIcon={<SpeedIcon />}
-            >
-              <Typography sx={{ fontWeight: "bold" }}>
-                START DEEP SCAN
-              </Typography>
-            </Button>
-            <Button
-              onClick={() => navigate("/contact")}
-              disableElevation
-              color="secondary"
-              size="large"
-            >
-              <Typography sx={{ fontWeight: "bold" }}>CONTACT US</Typography>{" "}
-            </Button>
-          </Stack>
+          <SearchArea />
         </Grid>
         <Grid item xs={12} md={5} sx={{ display: { xs: "none", sm: "block" } }}>
           <img

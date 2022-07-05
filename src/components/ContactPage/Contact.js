@@ -20,13 +20,20 @@ function Contact() {
           alignItems="center"
           spacing={1}
           mt="1em"
-          mb="3em"
+          mb="1em"
         >
           <TipsAndUpdatesIcon color="secondary" />
           <Typography variant="h5">
-            Lets Be <strong>Friends</strong>
+            Lets Get <strong>Started</strong>
           </Typography>
         </Stack>
+        <Typography color="gray" mb="3em">
+          <strong>
+            {" "}
+            Awesome! Just One More Step, Tell Us Who You Are And we'll Reach Out
+            And Get Started
+          </strong>
+        </Typography>
         {/* we are submitting this form using formsubmit visit their site for more info "formsubmit.co" */}
         <form
           action="https://formsubmit.co/idasgamification@gmail.com"
@@ -36,17 +43,31 @@ function Contact() {
             <TextField
               type="text"
               name="name"
+              variant="standard"
               label="Full name"
+              color="secondary"
               required
               helperText="what's your name?"
-              maxlength="320"
+              maxLength="320"
             />
             <TextField
               type="email"
               name="email"
               helperText="Where Can We Find You?"
-              maxlength="320"
+              maxLength="320"
+              variant="standard"
               label="Email"
+              color="secondary"
+              required
+            />
+            <TextField
+              color="secondary"
+              type="text"
+              name="website"
+              variant="standard"
+              helperText="What Website Would You Like Us To Fix?"
+              maxLength="320"
+              label="website"
               required
             />
             <TextField
@@ -54,10 +75,12 @@ function Contact() {
               name="messsage"
               helperText="What Would You like To share?"
               label="Message (max = 900)"
+              color="secondary"
               required
               multiline
+              variant="filled"
               rows="10"
-              maxlength="900"
+              maxLength="900"
             ></TextField>
             <Button variant="outlined" color="secondary" type="submit">
               Send

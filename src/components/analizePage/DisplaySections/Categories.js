@@ -1,18 +1,11 @@
-import {
-  Divider,
-  Stack,
-  Typography,
-  Box,
-  Grid,
-  LinearProgress,
-  Tooltip,
-} from "@mui/material";
+import { Divider, Stack, Typography, Box, Tooltip } from "@mui/material";
 import React from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import CircleIcon from "@mui/icons-material/Circle";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ProgressBar from "../../other/progressBar/ProgressBar";
+import Metrics from "../../other/Metrics";
+import DisplayAnalysisCTA from "../../other/progressBar/DisplayAnalysisCTA";
 
 function Categories({ values, ScreenShot }) {
   // T stands for title :)
@@ -26,7 +19,7 @@ function Categories({ values, ScreenShot }) {
     "The final Screen Shot is how your website looks after being painted by the browser";
   return (
     <Box mb="2em">
-      {/* circles */}
+      {/* progress */}
       <Stack
         direction="row"
         sx={{ flexWrap: "wrap" }}
@@ -37,7 +30,7 @@ function Categories({ values, ScreenShot }) {
         {/* performance */}
         <Stack
           spacing={1}
-          alignItems="center"
+          alignItems="flex-start"
           sx={{ width: { xm: "80%", sm: "25%", md: "25%", lg: "15%" } }}
         >
           <Typography
@@ -49,11 +42,12 @@ function Categories({ values, ScreenShot }) {
             </Tooltip>
           </Typography>
           <ProgressBar progress={Math.round(values.performance.score * 100)} />
+          <Metrics progress={Math.round(values.performance.score * 100)} />
         </Stack>
         {/* accessibility */}
         <Stack
           spacing={1}
-          alignItems="center"
+          alignItems="flex-start"
           sx={{ width: { xm: "80%", sm: "25%", md: "25%", lg: "15%" } }}
         >
           <Typography
@@ -67,11 +61,12 @@ function Categories({ values, ScreenShot }) {
           <ProgressBar
             progress={Math.round(values.accessibility.score * 100)}
           />
+          <Metrics progress={Math.round(values.accessibility.score * 100)} />
         </Stack>
         {/* seo */}
         <Stack
           spacing={1}
-          alignItems="center"
+          alignItems="flex-start"
           sx={{ width: { xm: "80%", sm: "25%", md: "25%", lg: "15%" } }}
         >
           <Typography
@@ -87,6 +82,7 @@ function Categories({ values, ScreenShot }) {
             </Tooltip>
           </Typography>
           <ProgressBar progress={Math.round(values.seo.score * 100)} />
+          <Metrics progress={Math.round(values.seo.score * 100)} />
         </Stack>
       </Stack>
       {/* pic & cirle */}
@@ -97,63 +93,13 @@ function Categories({ values, ScreenShot }) {
           flexWrap: "wrap",
           justifyContent: { xs: "center", sm: "space-evenly" },
         }}
-        mt="10em"
+        mt="5em"
       >
-        {/* ceircle */}
-        <Stack
-          alignItems="center"
-          justifyContent="center"
-          sx={{ width: { xs: "60%", sm: "40%", md: "25%", lg: "20%" } }}
-        >
-          {/* performance */}
-          <Stack spacing={1} alignItems="center" width="100%">
-            <CircularProgressbar
-              value={Math.round(values.performance.score * 100)}
-              text={`${Math.round(values.performance.score * 100)}%`}
-              background
-              styles={buildStyles({
-                backgroundColor: "#fff",
-                pathColor:
-                  values.performance.score * 100 < 50
-                    ? "#ef5350"
-                    : values.performance.score * 100 > 90
-                    ? "#66bb6a"
-                    : "#ffa726",
-              })}
-              strokeWidth={5}
-            />
-            <Typography>Performance</Typography>
-          </Stack>
-          <Typography
-            variant="body2"
-            sx={{ width: "100%", color: "gray" }}
-            textAlign="center"
-          >
-            Values are estimated and may vary. Depending on the Traffic and
-            Location of the server
-          </Typography>
-          <Stack
-            direction="row"
-            width="100%"
-            flexWrap="wrap"
-            justifyContent="space-between"
-            mt="1em"
-          >
-            <Stack direction="row" alignItems="center" spacing={1}>
-              <CircleIcon sx={{ color: "#ef5350" }} fontSize="1em" />
-              <Typography variant="body2">Bad</Typography>
-            </Stack>
-            <Divider orientation="vertical" />
-            <Stack direction="row" alignItems="center" spacing={1}>
-              <CircleIcon sx={{ color: "#ffa726" }} fontSize="1em" />
-              <Typography variant="body2">Good</Typography>
-            </Stack>
-            <Divider orientation="vertical" />
-            <Stack direction="row" alignItems="center" spacing={1}>
-              <CircleIcon sx={{ color: "#66bb6a" }} fontSize="1em" />
-              <Typography variant="body2">Great</Typography>
-            </Stack>
-          </Stack>
+        {/* Call to action */}
+        <Stack sx={{ width: { xs: "80%", sm: "40%", md: "50%", lg: "40%" } }}>
+          <DisplayAnalysisCTA
+            progress={Math.round(values.performance.score * 100)}
+          />
         </Stack>
         <Divider />
         {/* pic */}
