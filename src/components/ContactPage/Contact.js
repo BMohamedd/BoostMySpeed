@@ -6,6 +6,28 @@ import { Container } from "@mui/system";
 import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
 
 function Contact() {
+  const [websiteValid, ChangeWebsiteValid] = React.useState(false);
+  // returns true if str is valid url
+  function validURL(str) {
+    var pattern = new RegExp(
+      "^(https?:\\/\\/)?" + // protocol
+        "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
+        "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
+        "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
+        "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
+        "(\\#[-a-z\\d_]*)?$",
+      "i"
+    ); // fragment locator
+    return !!pattern.test(str);
+  }
+  // checkes if the website is valid
+  const handleEditWebsite = (e) => {
+    if (validURL(e.target.value)) {
+      return ChangeWebsiteValid(true);
+    } else {
+      return ChangeWebsiteValid(false);
+    }
+  };
   return (
     <div>
       <NavBar />
@@ -64,8 +86,10 @@ function Contact() {
               color="secondary"
               type="text"
               name="website"
+              onChange={handleEditWebsite}
               variant="standard"
-              helperText="What Website Would You Like Us To Fix?"
+              helperText={websiteValid ? "" : "Please Enter A Valid Url"}
+              error={websiteValid ? false : true}
               maxLength="320"
               label="website"
               required
@@ -82,7 +106,12 @@ function Contact() {
               rows="10"
               maxLength="900"
             ></TextField>
-            <Button variant="outlined" color="secondary" type="submit">
+            <Button
+              variant="contained"
+              color="secondary"
+              type="submit"
+              disabled={websiteValid ? false : true}
+            >
               Send
             </Button>
           </Stack>

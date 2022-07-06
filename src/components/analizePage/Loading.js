@@ -48,7 +48,7 @@ function Loading() {
               color="gray"
               sx={{ display: "flex", alignItems: "center", gap: "10px" }}
             >
-              <span>Analyzing...</span>
+              <span>Analyzing with Lighthouse...</span>
             </Typography>
             <Typography
               color="gray"

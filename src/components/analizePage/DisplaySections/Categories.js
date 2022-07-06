@@ -1,7 +1,5 @@
 import { Divider, Stack, Typography, Box, Tooltip } from "@mui/material";
 import React from "react";
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ProgressBar from "../../other/progressBar/ProgressBar";
 import Metrics from "../../other/Metrics";

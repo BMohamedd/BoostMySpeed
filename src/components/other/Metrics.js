@@ -1,6 +1,7 @@
 import CircleIcon from "@mui/icons-material/Circle";
-import { Stack, Typography } from "@mui/material";
+import { Stack, Typography, Tooltip } from "@mui/material";
 import React from "react";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 
 function Metrics({ progress }) {
   const color =
@@ -13,8 +14,16 @@ function Metrics({ progress }) {
       spacing={1}
     >
       <CircleIcon sx={{ color: color }} fontSize="1em" />
-      <Typography variant="body2">
-        {progress < 50 ? "Bad" : progress > 90 ? "Great" : "Need Improvment"}
+      <Typography
+        variant="body2"
+        sx={{ display: "flex", alignItems: "center", gap: "5px" }}
+      >
+        <span>
+          {progress < 50 ? "Bad" : progress > 90 ? "Great" : "Need Improvment"}
+        </span>
+        <Tooltip title="The following metrics are generated using Lighthouse Performance data">
+          <HelpOutlineIcon fontSize="10px" />
+        </Tooltip>
       </Typography>
     </Stack>
   );
