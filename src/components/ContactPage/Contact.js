@@ -7,6 +7,7 @@ import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
 
 function Contact() {
   const [websiteValid, ChangeWebsiteValid] = React.useState(false);
+  const [error, changeError] = React.useState(false);
   // returns true if str is valid url
   function validURL(str) {
     var pattern = new RegExp(
@@ -22,9 +23,14 @@ function Contact() {
   }
   // checkes if the website is valid
   const handleEditWebsite = (e) => {
+    if (e.target.value === "") {
+      return changeError(false);
+    }
     if (validURL(e.target.value)) {
+      changeError(false);
       return ChangeWebsiteValid(true);
     } else {
+      changeError(true);
       return ChangeWebsiteValid(false);
     }
   };
@@ -88,8 +94,8 @@ function Contact() {
               name="website"
               onChange={handleEditWebsite}
               variant="standard"
-              helperText={websiteValid ? "" : "Please Enter A Valid Url"}
-              error={websiteValid ? false : true}
+              helperText="Please Enter A Valid Url"
+              error={error ? true : false}
               maxLength="320"
               label="website"
               required

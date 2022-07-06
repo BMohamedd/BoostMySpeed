@@ -38,7 +38,7 @@ function Loading() {
       >
         <Stack alignItems="center">
           <img src={Logo} width="25px" alt="logo" />
-          <Typography color="gray">BOOSTMYSPEED</Typography>
+          <Typography color="gray">SPEEDYOURWEB</Typography>
         </Stack>
         <Grid container justifyContent="space-evenly">
           <Grid item sm={12} md={4} lg={5}>
@@ -70,7 +70,7 @@ function Loading() {
         </Grid>
         <Typography color="gray" textAlign="center">
           Copyright &copy;
-          {new Date().getFullYear() + " "} - BoostMySpeed
+          {new Date().getFullYear() + " "} - Speedyourweb
         </Typography>
         <LinearProgress
           color="secondary"

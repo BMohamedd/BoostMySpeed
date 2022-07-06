@@ -12,7 +12,7 @@ function DisplayAnalysisCTA({ progress }) {
       : progress > 90
       ? "Well done! Your performance score is"
       : "Your performance score is";
-  const keyWord = progress < 50 ? "BAD" : progress > 90 ? "GREAT" : "GOOD";
+  const keyWord = progress < 50 ? "BAD." : progress > 90 ? "GREAT." : "GOOD.";
   return (
     <Stack>
       <Typography sx={{ fontSize: { xs: "1.5em", md: "3em" } }}>

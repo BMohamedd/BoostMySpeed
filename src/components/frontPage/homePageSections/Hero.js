@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Container, Typography, Stack, Button } from "@mui/material";
+import { Grid, Container, Typography } from "@mui/material";
 import heroSVG from "../../../assets/hero.svg";
 import SearchArea from "./SearchArea";
 

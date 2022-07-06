@@ -3,7 +3,7 @@ import { AppBar, Button, Toolbar, Grid, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import HandymanIcon from "@mui/icons-material/Handyman";
 import Logo from "../../assets/Logo.png";
-import { useNavigate, useLocation, Navigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function NavBar() {
   const navigate = useNavigate();
