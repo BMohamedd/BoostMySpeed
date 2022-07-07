@@ -5,7 +5,6 @@ import working from "../../assets/workingOnIt.svg";
 import { Container } from "@mui/system";
 
 function Loading() {
-  console.log("loading...");
   const [dialog, changeDialog] = React.useState("Speedyourweb is warming up");
   const [num, changeNum] = React.useState(0);
   const toSay = [

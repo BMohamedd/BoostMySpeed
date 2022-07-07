@@ -121,6 +121,7 @@ function ScreenShots({ report, passed, failed }) {
           (obj, index) => {
             return (
               <Box
+                key={index}
                 sx={{
                   width: {
                     xs: "40px",
@@ -173,9 +174,9 @@ function ScreenShots({ report, passed, failed }) {
         timeout="auto"
         unmountOnExit
       >
-        {passed.map((passedTest) => {
+        {passed.map((passedTest, index) => {
           return (
-            <span>
+            <span key={index}>
               <PassedFailedTest
                 passed={true}
                 testName={passedTest.title}
@@ -207,9 +208,9 @@ function ScreenShots({ report, passed, failed }) {
         timeout="auto"
         unmountOnExit
       >
-        {failed.map((failedTest) => {
+        {failed.map((failedTest, index) => {
           return (
-            <span>
+            <span key={index}>
               <PassedFailedTest
                 passed={false}
                 testName={failedTest.title}

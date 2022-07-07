@@ -3,49 +3,68 @@ import { useNavigate, useParams } from "react-router-dom";
 import {
   finalUrlCheck,
   requestAnalize,
+  requestAnalizeDesktop,
 } from "./helperFunctions/helperFunctions";
 import NavBar from "../other/NavBar";
 import DisplayAnaliysis from "./DisplayAnaliysis";
 import Loading from "./Loading";
 import { Box } from "@mui/system";
+import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
+import LaptopMacIcon from "@mui/icons-material/LaptopMac";
 import Footer from "../frontPage/homePageSections/Footer";
+import { Tab, Tabs } from "@mui/material";
+import { reportContext } from "../../Context/Report/ReportContextProvider";
 
 function Analize() {
   const { url } = useParams();
   const navigate = useNavigate();
+  const {
+    switchStates,
+    changeReport,
+    report,
+    passedaudits,
+    failedaudits,
+    changeSideReport,
+    sideReport,
+  } = React.useContext(reportContext);
   let urlToSendTheRequestTo = finalUrlCheck(url);
   const [loading, ChangeLoading] = React.useState(true);
-  const [passedaudits, changePassedaudits] = React.useState([]);
-  const [failedaudits, changeFailedaudits] = React.useState([]);
-  const [report, changeReport] = React.useState([]);
+  const [disktopScanLoading, changedisktopScanLoading] = React.useState(true);
+  const [currentTab, changeCurrentTab] = React.useState("1");
 
   React.useEffect(() => {
-    console.log(urlToSendTheRequestTo);
     const effect = async () => {
       const data = await requestAnalize(urlToSendTheRequestTo);
-      if (!data.data) {
-        navigate("/");
+      if (!data.data || data.data.runtimeError) {
         // redirect to error page
+        navigate("/error");
       } else {
         ChangeLoading(false);
-        // putting all the report in the report state
         changeReport(data);
-        // putting the failed audits in the "failedaudits" state
-        changeFailedaudits(
-          Object.values(data.data.audits).filter((audit) => {
-            return audit.score === 0 && audit.scoreDisplayMode === "binary";
-          })
-        );
-        // putting the passed audits in the "passedaudits" state
-        changePassedaudits(
-          Object.values(data.data.audits).filter((audit) => {
-            return audit.score === 1 && audit.scoreDisplayMode === "binary";
-          })
-        );
+        RequestDisktopInfo();
       }
     };
     effect();
   }, []);
+  const RequestDisktopInfo = async () => {
+    const diskData = await requestAnalizeDesktop(urlToSendTheRequestTo);
+    if (!diskData.data.audits) {
+      console.log("error");
+      // redirect to error page
+    } else {
+      // store the report in the side Report
+      changedisktopScanLoading(false);
+      changeSideReport(diskData);
+    }
+  };
+  const changeDisplayedReport = () => {
+    if (!disktopScanLoading && sideReport.data.audits) {
+      switchStates();
+      currentTab === "1" ? changeCurrentTab("2") : changeCurrentTab("1");
+    } else {
+      console.log("cannot display disktop scan");
+    }
+  };
 
   if (loading) {
     return <Loading />;
@@ -53,7 +72,24 @@ function Analize() {
     return (
       <div>
         <NavBar />
-        <Box sx={{ mt: "5em" }}>
+        <Box sx={{ mt: { xs: "10em", sm: "5em" } }}>
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Tabs
+              value={currentTab}
+              onChange={changeDisplayedReport}
+              textColor="secondary"
+              indicatorColor="secondary"
+            >
+              <Tab icon={<PhoneAndroidIcon />} value="1"></Tab>
+              <Tab
+                icon={disktopScanLoading ? null : <LaptopMacIcon />}
+                label={disktopScanLoading ? "Loading..." : ""}
+                value="2"
+                disabled={disktopScanLoading ? true : false}
+              ></Tab>
+            </Tabs>
+          </Box>
+
           <DisplayAnaliysis
             passed={passedaudits}
             failed={failedaudits}
