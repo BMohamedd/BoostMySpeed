@@ -15,7 +15,7 @@ function DisplayAnaliysis({ passed, failed, fullReport }) {
       {/* header */}
       <Typography sx={{ fontSize: { xs: "1em", md: "1.5em" } }}>
         Speed test results for:{" "}
-        <strong style={{ color: "#9c27b0" }}>{fullReport.data.finalUrl}</strong>
+        <strong style={{ color: "#9c27b0" }}>{fullReport.finalUrl}</strong>
       </Typography>
       <Stack
         sx={{ borderBottom: "2px solid #9c27b0", width: "fit-content" }}
@@ -31,11 +31,11 @@ function DisplayAnaliysis({ passed, failed, fullReport }) {
       </Stack>
       {/* categories */}
       <Categories
-        values={fullReport.data.categories}
-        ScreenShot={fullReport.data.audits["final-screenshot"].details.data}
+        values={fullReport.categories}
+        ScreenShot={fullReport.audits["final-screenshot"].details.data}
       />
       <Divider />
-      <ImportantInformation audits={fullReport.data.audits} />
+      <ImportantInformation audits={fullReport.audits} />
       <ScreenShots report={fullReport} passed={passed} failed={failed} />
     </Container>
   );

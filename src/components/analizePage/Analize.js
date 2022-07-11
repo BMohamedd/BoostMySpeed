@@ -26,6 +26,7 @@ function Analize() {
     failedaudits,
     changeSideReport,
     sideReport,
+    fillPassedAndFailed,
   } = React.useContext(reportContext);
   let urlToSendTheRequestTo = finalUrlCheck(url);
   const [loading, ChangeLoading] = React.useState(true);
@@ -34,31 +35,32 @@ function Analize() {
 
   React.useEffect(() => {
     const effect = async () => {
-      const data = await requestAnalize(urlToSendTheRequestTo);
-      if (!data.data || data.data.runtimeError) {
+      const { data } = await requestAnalize(urlToSendTheRequestTo);
+      if (!data.lighthouseResult || data.lighthouseResult.runtimeError) {
         // redirect to error page
         navigate("/error");
       } else {
         ChangeLoading(false);
-        changeReport(data);
+        changeReport(data.lighthouseResult);
+        fillPassedAndFailed();
         RequestDisktopInfo();
       }
     };
     effect();
   }, []);
   const RequestDisktopInfo = async () => {
-    const diskData = await requestAnalizeDesktop(urlToSendTheRequestTo);
-    if (!diskData.data.audits) {
-      console.log("error");
+    const { data } = await requestAnalizeDesktop(urlToSendTheRequestTo);
+    if (!data.lighthouseResult || data.lighthouseResult.runtimeError) {
       // redirect to error page
+      navigate("/error");
     } else {
       // store the report in the side Report
       changedisktopScanLoading(false);
-      changeSideReport(diskData);
+      changeSideReport(data.lighthouseResult);
     }
   };
   const changeDisplayedReport = () => {
-    if (!disktopScanLoading && sideReport.data.audits) {
+    if (!disktopScanLoading && sideReport.audits) {
       switchStates();
       currentTab === "1" ? changeCurrentTab("2") : changeCurrentTab("1");
     } else {

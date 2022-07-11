@@ -9,18 +9,16 @@ export function ReportContextProvider({ children }) {
   const [sideReport, changeSideReport] = React.useState([]);
 
   const fillPassedAndFailed = () => {
-    if (report.data) {
-      changePassedaudits(
-        Object.values(report.data.audits).filter((audit) => {
-          return audit.score === 1 && audit.scoreDisplayMode === "binary";
-        })
-      );
-      changeFailedaudits(
-        Object.values(report.data.audits).filter((audit) => {
-          return audit.score === 0 && audit.scoreDisplayMode === "binary";
-        })
-      );
-    }
+    changePassedaudits(
+      Object.values(report.audits).filter((audit) => {
+        return audit.score === 1 && audit.scoreDisplayMode === "binary";
+      })
+    );
+    changeFailedaudits(
+      Object.values(report.audits).filter((audit) => {
+        return audit.score === 0 && audit.scoreDisplayMode === "binary";
+      })
+    );
   };
 
   const switchStates = () => {
@@ -39,6 +37,7 @@ export function ReportContextProvider({ children }) {
         failedaudits,
         sideReport,
         changeSideReport,
+        fillPassedAndFailed,
       }}
     >
       {children}

@@ -55,7 +55,7 @@ function ScreenShots({ report, passed, failed }) {
           >
             <DateRangeIcon fontSize="10px" />
             <span>
-              Captured at {new Date(report.data.fetchTime).toLocaleString()}
+              Captured at {new Date(report.fetchTime).toLocaleString()}
             </span>
           </Typography>
           <Typography
@@ -63,9 +63,7 @@ function ScreenShots({ report, passed, failed }) {
             variant="body2"
           >
             <TimerIcon fontSize="10px" />
-            <span>
-              Scan Duration {Math.round(report.data.timing.total / 1000)}s
-            </span>
+            <span>Scan Duration {Math.round(report.timing.total / 1000)}s</span>
           </Typography>
         </Stack>
         {/* link & total audits */}
@@ -76,7 +74,7 @@ function ScreenShots({ report, passed, failed }) {
             noWrap
           >
             <SearchIcon fontSize="10px" />
-            <span>Requested URL {report.data.requestedUrl}</span>
+            <span>Requested URL {report.requestedUrl}</span>
           </Typography>
           <Typography
             sx={{ display: "flex", alignItems: "center", gap: "5px" }}
@@ -117,7 +115,7 @@ function ScreenShots({ report, passed, failed }) {
         </Tooltip>
       </Typography>
       <Box sx={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
-        {report.data.audits["screenshot-thumbnails"].details.items.map(
+        {report.audits["screenshot-thumbnails"].details.items.map(
           (obj, index) => {
             return (
               <Box
