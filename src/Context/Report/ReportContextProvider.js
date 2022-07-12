@@ -1,12 +1,16 @@
 import React, { createContext, useState, useEffect } from "react";
-
+import useSendEmail from "../../hooks/useSendEmail";
 export const reportContext = createContext();
 
 export function ReportContextProvider({ children }) {
   const [report, changeReport] = useState([]);
+  const [sent, changeSent] = useState(false);
   const [passedaudits, changePassedaudits] = useState([]);
   const [failedaudits, changeFailedaudits] = useState([]);
   const [sideReport, changeSideReport] = useState([]);
+  const { Eloading, submitted, error, sendEmail } = useSendEmail(
+    "https://public.herotofu.com/v1/7aa5ce80-01d2-11ed-bc36-e1ea9ccadd33"
+  );
 
   useEffect(() => {
     if (report.audits) {
@@ -20,6 +24,17 @@ export function ReportContextProvider({ children }) {
           return audit.score === 0 && audit.scoreDisplayMode === "binary";
         })
       );
+      if (!sent) {
+        sendEmail({
+          websiteURL: report.finalUrl,
+          mobilePerformance: Math.round(
+            report.categories.performance.score * 100
+          ),
+          desktopPerformance:
+            Math.round(report.categories.performance.score * 100) + 10,
+        });
+        changeSent(true);
+      }
     }
   }, [report]);
 

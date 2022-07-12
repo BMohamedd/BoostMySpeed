@@ -14,7 +14,6 @@ import LaptopMacIcon from "@mui/icons-material/LaptopMac";
 import Footer from "../frontPage/homePageSections/Footer";
 import { Tab, Tabs } from "@mui/material";
 import { reportContext } from "../../Context/Report/ReportContextProvider";
-import useSendEmail from "../../hooks/useSendEmail";
 
 function Analize() {
   const { url } = useParams();
@@ -28,9 +27,7 @@ function Analize() {
     changeSideReport,
     sideReport,
   } = React.useContext(reportContext);
-  const { Eloading, submitted, error, sendEmail } = useSendEmail(
-    "https://public.herotofu.com/v1/7aa5ce80-01d2-11ed-bc36-e1ea9ccadd33"
-  );
+
   let urlToSendTheRequestTo = finalUrlCheck(url);
   const [loading, ChangeLoading] = React.useState(true);
   const [disktopScanLoading, changedisktopScanLoading] = React.useState(true);
@@ -45,14 +42,7 @@ function Analize() {
       } else {
         ChangeLoading(false);
         changeReport(data.lighthouseResult);
-        sendEmail({
-          websiteURL: report.finalUrl,
-          mobilePerformance: Math.round(
-            report.categories.performance.score * 100
-          ),
-          desktopPerformance:
-            Math.round(report.categories.performance.score * 100) + 10,
-        });
+
         RequestDisktopInfo();
       }
     };
