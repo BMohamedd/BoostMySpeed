@@ -24,19 +24,24 @@ export function ReportContextProvider({ children }) {
           return audit.score === 0 && audit.scoreDisplayMode === "binary";
         })
       );
-      if (!sent && sideReport.categories.performance.score && report.categories.performance.score &&) {
-        sendEmail({
-          websiteURL: report.finalUrl,
-          mobilePerformance: Math.round(
-            report.categories.performance.score * 100
-          ),
-          desktopPerformance:
-            Math.round(sideReport.categories.performance.score * 100),
-        });
-        changeSent(true);
-      }
     }
   }, [report]);
+  useEffect(() => {
+    if (!sent && sideReport.audits && report.audits) {
+      sendEmailFunction();
+    }
+  }, [sideReport, report]);
+
+  const sendEmailFunction = () => {
+    sendEmail({
+      websiteURL: report.finalUrl,
+      mobilePerformance: Math.round(report.categories.performance.score * 100),
+      desktopPerformance: Math.round(
+        sideReport.categories.performance.score * 100
+      ),
+    });
+    changeSent(true);
+  };
 
   const switchStates = () => {
     const TempHoder = JSON.parse(JSON.stringify(sideReport));

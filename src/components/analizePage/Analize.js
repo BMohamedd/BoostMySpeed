@@ -42,7 +42,6 @@ function Analize() {
       } else {
         ChangeLoading(false);
         changeReport(data.lighthouseResult);
-
         RequestDisktopInfo();
       }
     };
