@@ -24,14 +24,14 @@ export function ReportContextProvider({ children }) {
           return audit.score === 0 && audit.scoreDisplayMode === "binary";
         })
       );
-      if (!sent) {
+      if (!sent && sideReport.categories.performance.score && report.categories.performance.score &&) {
         sendEmail({
           websiteURL: report.finalUrl,
           mobilePerformance: Math.round(
             report.categories.performance.score * 100
           ),
           desktopPerformance:
-            Math.round(report.categories.performance.score * 100) + 10,
+            Math.round(sideReport.categories.performance.score * 100),
         });
         changeSent(true);
       }
