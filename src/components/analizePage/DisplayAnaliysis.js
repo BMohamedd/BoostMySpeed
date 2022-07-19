@@ -6,7 +6,6 @@ import ImportantInformation from "./DisplaySections/ImportantInformation";
 import ScreenShots from "./DisplaySections/ScreenShots";
 
 function DisplayAnaliysis({ passed, failed, fullReport }) {
-  // console.log(passed, failed, fullReport);
   return (
     <Container
       maxWidth="xl"

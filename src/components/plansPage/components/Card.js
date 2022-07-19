@@ -1,8 +1,10 @@
 import { Paper, Box, Typography, Stack, Divider, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import CheckIcon from "@mui/icons-material/Check";
 
 function Card({ name, price, features, children }) {
+  const navigate = useNavigate();
   return (
     <Paper elevation={5} sx={{ width: "100%", position: "relative" }}>
       <Box
@@ -55,6 +57,9 @@ function Card({ name, price, features, children }) {
           disableElevation
           size="large"
           color="secondary"
+          onClick={() => {
+            navigate("/buy/" + name);
+          }}
         >
           BUY NOW{" "}
         </Button>

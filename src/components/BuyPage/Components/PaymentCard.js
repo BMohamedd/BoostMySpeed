@@ -1,10 +1,10 @@
-import { Paper, Box, Typography, Stack, Divider, Button } from "@mui/material";
+import { Paper, Box, Typography, Stack, Divider } from "@mui/material";
 import React from "react";
 import CheckIcon from "@mui/icons-material/Check";
 import PaymentBadge from "./PaymentBadge";
 import { paymentcontext } from "../../../Context/Payment/paymentContextProvider";
 
-function PaymentCard({ name, price, features, selected, plan }) {
+function PaymentCard({ name, price, features }) {
   const { changePlanAndPrice } = React.useContext(paymentcontext);
   return (
     <Paper elevation={5} sx={{ width: "100%", position: "relative" }}>
@@ -35,6 +35,7 @@ function PaymentCard({ name, price, features, selected, plan }) {
         {features.split(",").map((feature) => {
           return (
             <Typography
+              key={feature}
               alignSelf="flex-start"
               sx={{
                 marginLeft: "1em",
@@ -52,18 +53,8 @@ function PaymentCard({ name, price, features, selected, plan }) {
           );
         })}
         <Divider />
-        <Button
-          sx={{ textAligh: "center", marginLeft: "1em", fontWeight: "bolder" }}
-          variant="contained"
-          onClick={() => changePlanAndPrice(plan)}
-          disableElevation
-          size="large"
-          color="secondary"
-        >
-          SELECT{" "}
-        </Button>
       </Stack>
-      {selected ? <PaymentBadge /> : null}
+      <PaymentBadge />
     </Paper>
   );
 }

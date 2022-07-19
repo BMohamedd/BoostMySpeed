@@ -7,19 +7,15 @@ function Badge() {
       sx={{
         background: "#ff9144",
         color: "#fff",
-        width: {
-          xs: "80%",
-          sm: "70%",
-          md: "50%",
-          lg: "40%",
-        },
-        height: "2em",
+        width: "fit-content",
         padding: ".25em 1em",
         position: "absolute",
         top: 10,
       }}
     >
-      <Typography sx={{ fontSize: "1.5em", fontWeight: "bolder" }}>
+      <Typography
+        sx={{ fontSize: { xs: "1em", sm: "1.5em" }, fontWeight: "bolder" }}
+      >
         We Recommend
       </Typography>
     </Box>

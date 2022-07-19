@@ -7,6 +7,7 @@ import Contact from "./components/ContactPage/Contact";
 import Error from "./components/errorPage/Error";
 import Buy from "./components/BuyPage/Buy";
 import Plans from "./components/plansPage/Plans";
+import Test from "./components/playGround/Test";
 
 function App() {
   return (
@@ -14,9 +15,10 @@ function App() {
       <Routes>
         <Route index element={<HomePage />} />
         <Route path="/start-deep-scan" element={<HomePage />} />
+        <Route path="/playGround" element={<Test />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/plans" element={<Plans />} />
-        <Route path="/buy" element={<Buy />} />
+        <Route path="/buy/:name" element={<Buy />} />
         <Route path="/error" element={<Error />} />
         <Route path="/analize/:url/*" element={<Analize />} />
         <Route path="*" element={<HomePage />} />

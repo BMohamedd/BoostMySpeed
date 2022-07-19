@@ -1,45 +1,88 @@
-import { Grid, Container, Box } from "@mui/material";
+import { Grid, Container, Box, Divider, Typography } from "@mui/material";
 import React from "react";
+import { plansData } from "../../other/plansData/plansData";
+import { useParams } from "react-router-dom";
 import PaymentCard from "../Components/PaymentCard";
-import { paymentcontext } from "../../../Context/Payment/paymentContextProvider";
+import Title from "../../other/title/Title";
 import PaypalComponent from "../payment/PaypalComponent";
 
 function FinishPayment() {
-  const { selectedPlan } = React.useContext(paymentcontext);
+  const { name } = useParams();
+  const PlanToDisplay =
+    name === "Basic"
+      ? plansData[0]
+      : name === "Standard"
+      ? plansData[1]
+      : plansData[2];
+
   return (
     <Container maxWidth="xl">
-      <Grid container spacing={2} justifyContent="space-between" mt="2em">
-        <Grid item xs={11} sm={5.5} lg={3.5}>
-          <PaymentCard
-            name="Basic"
-            price="300"
-            features="Up to 30 Seconds, Up to 1 Round of Revisions, 75 words overlay text script"
-            selected={selectedPlan === "basic" ? true : false}
-            plan="basic"
-          />
+      <Grid
+        container
+        direction="row"
+        spacing={2}
+        justifyContent="center"
+        mt="2em"
+      >
+        {/* payment */}
+        <Grid item xs={12} sm={7.9} lg={8}>
+          <Typography color="gray" sx={{ fontWeight: "bolder" }}>
+            SELECTED PLAN:
+          </Typography>
+          <Box
+            sx={{ width: { xs: "100%", sm: "60%", lg: "400px" }, mb: "2em" }}
+          >
+            <PaymentCard
+              name={PlanToDisplay.name}
+              price={PlanToDisplay.price}
+              features={PlanToDisplay.features}
+            />
+          </Box>
+          <Divider />
+          <Box sx={{ mt: "2em" }}>
+            <PaypalComponent price={PlanToDisplay.price} />
+          </Box>
         </Grid>
-        <Grid item xs={11} sm={5.5} lg={3.5}>
-          <PaymentCard
-            name="Standard"
-            price="600"
-            features="Up to 60 Seconds, Up to 2 Rounds of Revisions, 150 words overlay text script"
-            selected={selectedPlan === "standard" ? true : false}
-            plan="standard"
-          />
-        </Grid>
-        <Grid item xs={11} sm={5.5} lg={3.5}>
-          <PaymentCard
-            name="premium"
-            price="1,200"
-            features="Up to 90 Seconds, Up to 3 Rounds of Revisions, 200 words overlay text script"
-            selected={selectedPlan === "premium" ? true : false}
-            plan="premium"
-          />
+        {/* summary */}
+        <Grid item xs={0} sm={4} lg={4}>
+          <Title preStrong="" strong="Summary:" postStrong="" />
+          <Typography
+            variant="body2"
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              mt: "2em",
+              gap: "5px",
+              width: "100%",
+            }}
+          >
+            <span>Speedyourweb {PlanToDisplay.name} plan</span>
+            <span>{PlanToDisplay.price}$</span>
+          </Typography>
+          <Typography variant="body2" color="gray" mb="2em">
+            Qty: 1
+          </Typography>
+          <Divider />
+          <Typography
+            variant="body2"
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              mt: "4em",
+              gap: "5px",
+              width: "100%",
+            }}
+          >
+            <strong>Total</strong>
+            <strong>{PlanToDisplay.price}$</strong>
+          </Typography>
+          <Typography variant="body2" color="gray" mb="2em">
+            USD
+          </Typography>
         </Grid>
       </Grid>
-      <Box sx={{ mt: "2em" }}>
-        <PaypalComponent />
-      </Box>
     </Container>
   );
 }
