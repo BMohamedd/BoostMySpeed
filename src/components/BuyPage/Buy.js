@@ -4,12 +4,11 @@ import NavBar from "../other/NavBar";
 import Footer from "../frontPage/homePageSections/Footer";
 import FinishPayment from "./subPages/FinishPayment";
 import { paymentcontext } from "../../Context/Payment/paymentContextProvider";
-import Contact from "../ContactPage/Contact";
-
+import WesiteInfo from "./WebsiteInfo/WebsiteInfo";
 const steps = [
+  "Select A plan",
   "Finish The Payment",
   "Add Website Information",
-  "Complete The Process",
 ];
 function Buy() {
   const { Item } = React.useContext(paymentcontext);
@@ -34,14 +33,7 @@ function Buy() {
           ))}
         </Stepper>
       </Container>
-      {Item === "0" ? (
-        <FinishPayment />
-      ) : Item === "1" ? (
-        <Contact />
-      ) : (
-        "hello world"
-      )}
-
+      {Item === "1" ? <FinishPayment /> : <WesiteInfo />}
       <Footer />
     </Box>
   );

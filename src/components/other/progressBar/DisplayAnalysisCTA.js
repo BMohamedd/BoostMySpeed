@@ -23,7 +23,7 @@ function DisplayAnalysisCTA({ progress }) {
         variant="contained"
         color="secondary"
         size="large"
-        onClick={() => navigate("/contact")}
+        onClick={() => navigate("/plans")}
         endIcon={<HandymanIcon />}
       >
         <strong>Fix My Site speed</strong>

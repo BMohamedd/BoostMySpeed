@@ -1,24 +1,41 @@
 import React from "react";
 import NavBar from "../other/NavBar";
 import Footer from "../frontPage/homePageSections/Footer";
-import { Grid, Stack, Typography } from "@mui/material";
+import {
+  Grid,
+  Stack,
+  Typography,
+  Stepper,
+  Step,
+  StepLabel,
+} from "@mui/material";
 import Card from "./components/Card";
 import { plansData } from "../other/plansData/plansData";
 import { Container } from "@mui/system";
 import Badge from "./components/Badge";
+
+const steps = [
+  "Select A plan",
+  "Finish The Payment",
+  "Add Website Information",
+];
 
 function Plans() {
   return (
     <Stack>
       <NavBar />
       <Container maxWidth="xl">
-        <Typography
-          variant="h1"
-          sx={{ fontSize: "2.5em", mt: "5em", fontWeight: "bolder" }}
-          textAlign="center"
+        <Stepper
+          sx={{ mt: "8em", color: "#9c27b0" }}
+          activeStep={"0"}
+          alternativeLabel
         >
-          Explore A New Level Of Web Speed With Our Help
-        </Typography>
+          {steps.map((label) => (
+            <Step key={label}>
+              <StepLabel>{label}</StepLabel>
+            </Step>
+          ))}
+        </Stepper>
         <Grid container spacing={2} justifyContent="space-between" mt="2em">
           <Grid item xs={11} sm={5.5} lg={3.5}>
             <Card

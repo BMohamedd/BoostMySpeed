@@ -50,7 +50,7 @@ function NavBar() {
               variant="contained"
               color="secondary"
               size="small"
-              onClick={() => navigate("/contact")}
+              onClick={() => navigate("/plans")}
               endIcon={<HandymanIcon />}
             >
               <strong>Fix My Site speed</strong>

@@ -21,11 +21,15 @@ export default function PaypalComponent({ price }) {
                 },
               },
             ],
+            // not needed if a shipping address is actually needed
+            application_context: {
+              shipping_preference: "NO_SHIPPING",
+            },
           });
         },
         onApprove: (data, actions) => {
           return actions.order.capture().then(function (orderData) {
-            changeItem("1");
+            changeItem("2");
           });
         },
         onError: (err) => {

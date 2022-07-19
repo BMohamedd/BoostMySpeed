@@ -4,7 +4,7 @@ import useLocalStorage from "../../hooks/useLocalStorage";
 export const paymentcontext = createContext();
 
 export function PaymentContextProvider({ children }) {
-  const { Item, changeItem } = useLocalStorage("step", "0");
+  const { Item, changeItem } = useLocalStorage("step", "1");
 
   return (
     <paymentcontext.Provider
