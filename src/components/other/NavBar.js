@@ -58,11 +58,11 @@ function NavBar() {
             {/* deep scan */}
             <Button
               disableElevation
-              color="secondary"
               size="large"
               sx={{
                 marginLeft: { md: "1em" },
               }}
+              color="secondary"
               onClick={() => {
                 if (location.pathname === "/start-deep-scan") {
                   window.scrollTo(0, 0);
@@ -73,7 +73,7 @@ function NavBar() {
                 }
               }}
             >
-              <Typography sx={{ fontWeight: "bold" }}>
+              <Typography color="secondary" sx={{ fontWeight: "bold" }}>
                 START DEEP SCAN
               </Typography>
             </Button>

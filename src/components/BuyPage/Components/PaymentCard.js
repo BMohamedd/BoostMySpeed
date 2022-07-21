@@ -24,11 +24,11 @@ function PaymentCard({ name, price, features }) {
           variant="h4"
           sx={{ fontWeight: "bolder" }}
         >
-          {name} Plan
+          {name}
         </Typography>
-        <Typography textAlign="center">
+        <Typography textAlign="center" color="white">
           <strong style={{ fontSize: "2em" }}>${price}</strong>{" "}
-          <strong>/ video</strong>{" "}
+          <strong>/ Website</strong>{" "}
         </Typography>
       </Box>
       <Stack py="2em" alignItems="start">

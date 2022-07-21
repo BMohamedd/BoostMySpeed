@@ -1,14 +1,7 @@
 import React from "react";
 import NavBar from "../other/NavBar";
 import Footer from "../frontPage/homePageSections/Footer";
-import {
-  Grid,
-  Stack,
-  Typography,
-  Stepper,
-  Step,
-  StepLabel,
-} from "@mui/material";
+import { Grid, Stack, Stepper, Step, StepLabel } from "@mui/material";
 import Card from "./components/Card";
 import { plansData } from "../other/plansData/plansData";
 import { Container } from "@mui/system";
@@ -36,7 +29,12 @@ function Plans() {
             </Step>
           ))}
         </Stepper>
-        <Grid container spacing={2} justifyContent="space-between" mt="2em">
+        <Grid
+          container
+          spacing={2}
+          sx={{ justifyContent: { xs: "center", sm: "space-between" } }}
+          mt="2em"
+        >
           <Grid item xs={11} sm={5.5} lg={3.5}>
             <Card
               name={plansData[0].name}

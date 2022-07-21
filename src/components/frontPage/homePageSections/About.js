@@ -7,12 +7,19 @@ import {
   Typography,
   CardContent,
   Card,
+  CardActions,
+  Button,
 } from "@mui/material";
 import Analysis from "../../../assets/ana.JPG";
 import health from "../../../assets/doc.JPG";
 import build from "../../../assets/build.JPG";
+import Title from "../../other/title/Title";
+import Icons from "./AboutIcons/Icons";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { useNavigate } from "react-router-dom";
 
 function About() {
+  const navigate = useNavigate();
   const content = [
     {
       img: Analysis,
@@ -22,32 +29,24 @@ function About() {
     {
       img: health,
       header: "Health Checker",
-      body: "Get a complete list of installed apps that effect your site from acheiving loading quickly. This audit analyzes your site to detect all the apps that effect your site speed- including the ones you think you uninstalled but still linger in your code, slowing down your site. Make sure only the app you use show up in the list. Once you make changes, you can re-run the report and check to see if you did it correctly.",
+      body: "Get a complete list of installed apps that effect your site from acheiving loading quickly. This audit analyzes your site to detect all the apps that effect your site speed- including the ones you think you uninstalled...",
     },
     {
       img: build,
       header: "Page Breakdown",
-      body: "Our Shopify Speed Tool doesn't just analyzes your homepage like other speedcheckers. It crunches thru all the pages of your customers journey giving you a detailed performance report of the home, product collection and cart page.",
+      body: "Our Shopify Speed Tool doesn't just analyzes your homepage like other speedcheckers. It crunches thru all the pages of your customers journey giving you a detailed performance report of the home.",
     },
   ];
   return (
     <Container maxWidth="xl">
-      <Typography
-        variant="h4"
-        textAlign="center"
-        sx={{
-          my: "1em",
-        }}
-      >
-        What we Provide
-      </Typography>
+      <Title preStrong="What we" strong="Provide:" />
       <Box
         sx={{
           mt: "2em",
           display: "flex",
           gap: "1em",
           justifyContent: "space-between",
-          alignContent: "start",
+          alignItems: "center",
           flexWrap: "wrap",
         }}
       >
@@ -66,14 +65,31 @@ function About() {
                   alt="Paella dish"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {value.header}
+                  <Typography
+                    gutterBottom
+                    variant="h6"
+                    component="div"
+                    color="gray"
+                    sx={{ display: "flex", alignItems: "center", gap: "5px" }}
+                  >
+                    <Icons index={index} />
+                    <strong>{value.header}</strong>
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     {" "}
                     {value.body}{" "}
                   </Typography>
                 </CardContent>
+                <CardActions>
+                  <Button
+                    color="secondary"
+                    size="large"
+                    endIcon={<ArrowForwardIcon />}
+                    onClick={() => navigate("/plans")}
+                  >
+                    <strong>Start Now</strong>
+                  </Button>
+                </CardActions>
               </Card>
             </Paper>
           );

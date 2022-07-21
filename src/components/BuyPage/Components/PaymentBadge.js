@@ -1,29 +1,27 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 
-function PaymentBadge() {
+function Badge() {
   return (
     <Box
       sx={{
-        background: "#ff9144",
+        background: "silver",
         color: "#fff",
-        width: {
-          xs: "80%",
-          sm: "70%",
-          md: "50%",
-          lg: "40%",
-        },
-        height: "2em",
-        padding: ".25em 1em",
+        width: "100%",
+        paddingY: ".25em",
         position: "absolute",
         top: 10,
       }}
     >
-      <Typography sx={{ fontSize: "1.5em", fontWeight: "bolder" }}>
-        Selected
+      <Typography
+        sx={{ fontSize: { xs: "1em", sm: "1.5em" }, fontWeight: "bolder" }}
+        color="white"
+        textAlign="center"
+      >
+        Recomended
       </Typography>
     </Box>
   );
 }
 
-export default PaymentBadge;
+export default Badge;

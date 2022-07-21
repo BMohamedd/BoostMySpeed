@@ -1,20 +1,20 @@
 export const plansData = [
   {
     name: "Basic",
-    price: "300",
+    price: "85",
     features:
-      "Up to 30 Seconds, Up to 1 Round of Revisions, 75 words overlay text script",
+      "30 Days Money Back Guarantee, Browser caching , Resize photos, Minification, 2 Revisions ",
   },
   {
     name: "Standard",
-    price: "600",
+    price: "110",
     features:
-      "Up to 60 Seconds, Up to 2 Rounds of Revisions, 150 words overlay text script",
+      "30 Days Money Back Guarantee, Browser caching, Resize photos, MinificationDatabase optimization, 3 Revisions",
   },
   {
     name: "Premium",
-    price: "1200",
+    price: "145",
     features:
-      "Up to 90 Seconds, Up to 3 Rounds of Revisions, 200 words overlay text script",
+      "30 Days Money Back Guarantee, Browser caching, Resize photos, MinificationDatabase optimization, 3 Revisions, Software version upgrade, UNLIMITED Revisions",
   },
 ];

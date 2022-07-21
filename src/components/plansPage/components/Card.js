@@ -2,11 +2,13 @@ import { Paper, Box, Typography, Stack, Divider, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import React from "react";
 import CheckIcon from "@mui/icons-material/Check";
+import "./Card.css";
 
 function Card({ name, price, features, children }) {
   const navigate = useNavigate();
   return (
     <Paper elevation={5} sx={{ width: "100%", position: "relative" }}>
+      {/* plan/price */}
       <Box
         sx={{
           width: "100%",
@@ -23,21 +25,30 @@ function Card({ name, price, features, children }) {
           variant="h4"
           sx={{ fontWeight: "bolder" }}
         >
-          {name} Plan
+          {name}
         </Typography>
-        <Typography textAlign="center">
+        <Typography textAlign="center" color="white">
           <strong style={{ fontSize: "2em" }}>${price}</strong>{" "}
-          <strong>/ video</strong>{" "}
+          <strong>/ Website</strong>{" "}
         </Typography>
       </Box>
-      <Stack py="2em" alignItems="start">
+      {/* features */}
+      <Stack
+        py="2em"
+        alignItems="start"
+        id="scrollContainer"
+        sx={{
+          height: "200px",
+          overflowY: "scroll",
+        }}
+      >
         {features.split(",").map((feature) => {
           return (
             <Typography
               alignSelf="flex-start"
               sx={{
                 marginLeft: "1em",
-                mb: "1.5em",
+                mb: "1em",
                 fontSize: "1.25em",
                 display: "flex",
                 gap: "10px",
@@ -50,9 +61,22 @@ function Card({ name, price, features, children }) {
             </Typography>
           );
         })}
-        <Divider />
+      </Stack>
+      <Divider />
+      {/* button */}
+      <Box
+        sx={{
+          marginTop: "2em",
+          paddingBottom: "1em",
+          display: "grid",
+        }}
+      >
         <Button
-          sx={{ textAligh: "center", marginLeft: "1em", fontWeight: "bolder" }}
+          sx={{
+            margin: "auto",
+            fontWeight: "bolder",
+            width: "60%",
+          }}
           variant="contained"
           disableElevation
           size="large"
@@ -63,7 +87,8 @@ function Card({ name, price, features, children }) {
         >
           BUY NOW{" "}
         </Button>
-      </Stack>
+      </Box>
+      {/* badge */}
       {children}
     </Paper>
   );

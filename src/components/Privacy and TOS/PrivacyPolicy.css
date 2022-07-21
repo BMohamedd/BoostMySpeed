@@ -1,0 +1,30 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+p,
+li {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+}
+h3,
+h2 {
+  font-size: larger;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+p,
+li {
+  color: #333;
+}
+li {
+  margin-left: 1em;
+}

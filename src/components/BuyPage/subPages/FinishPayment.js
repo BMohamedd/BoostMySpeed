@@ -8,12 +8,19 @@ import PaypalComponent from "../payment/PaypalComponent";
 
 function FinishPayment() {
   const { name } = useParams();
+  const payment = React.useRef();
   const PlanToDisplay =
     name === "Basic"
       ? plansData[0]
       : name === "Standard"
       ? plansData[1]
       : plansData[2];
+  // all this effect is doing is scrolling to the paypal button if the devise is a mobile (smaller than 600px)
+  React.useEffect(() => {
+    if (600 >= window.screen.width) {
+      payment.current.scrollIntoView();
+    }
+  }, []);
 
   return (
     <Container maxWidth="xl">
@@ -39,12 +46,12 @@ function FinishPayment() {
             />
           </Box>
           <Divider />
-          <Box sx={{ mt: "2em" }}>
+          <Box sx={{ mt: "2em" }} ref={payment}>
             <PaypalComponent price={PlanToDisplay.price} />
           </Box>
         </Grid>
         {/* summary */}
-        <Grid item xs={0} sm={4} lg={4}>
+        <Grid item xs={12} sm={4} lg={4}>
           <Title preStrong="" strong="Summary:" postStrong="" />
           <Typography
             variant="body2"

@@ -163,7 +163,7 @@ function ScreenShots({ report, passed, failed }) {
         size="small"
       >
         <Typography color="#616161">PASSED TESTES ({passed.length})</Typography>
-        <p>{showPassed ? "Hide" : "Show"}</p>
+        <p style={{ color: "gray" }}>{showPassed ? "Hide" : "Show"}</p>
       </Button>
       <Divider />
       <Collapse
@@ -197,7 +197,7 @@ function ScreenShots({ report, passed, failed }) {
         size="small"
       >
         <Typography color="#616161">FAILED TESTES ({failed.length})</Typography>
-        <p>{showFailed ? "Hide" : "Show"}</p>
+        <p style={{ color: "gray" }}>{showFailed ? "Hide" : "Show"}</p>
       </Button>
       <Divider />
       <Collapse
@@ -235,7 +235,7 @@ function ScreenShots({ report, passed, failed }) {
           onClick={() => navigate("/")}
           endIcon={<HomeIcon />}
         >
-          <Typography sx={{ fontWeight: "bold" }}>
+          <Typography color="white" sx={{ fontWeight: "bold" }}>
             GO BACK TO HOME PAGE
           </Typography>
         </Button>
@@ -245,7 +245,9 @@ function ScreenShots({ report, passed, failed }) {
           color="secondary"
           size="large"
         >
-          <Typography sx={{ fontWeight: "bold" }}>CONTACT US</Typography>{" "}
+          <Typography color="secondary" sx={{ fontWeight: "bold" }}>
+            CONTACT US
+          </Typography>{" "}
         </Button>
       </Stack>
     </Stack>

@@ -5,18 +5,20 @@ function Badge() {
   return (
     <Box
       sx={{
-        background: "#ff9144",
+        background: "silver",
         color: "#fff",
-        width: "fit-content",
-        padding: ".25em 1em",
+        width: "100%",
+        paddingY: ".25em",
         position: "absolute",
         top: 10,
       }}
     >
       <Typography
         sx={{ fontSize: { xs: "1em", sm: "1.5em" }, fontWeight: "bolder" }}
+        color="white"
+        textAlign="center"
       >
-        We Recommend
+        Recomended
       </Typography>
     </Box>
   );

@@ -18,7 +18,7 @@ function Hero() {
         <Grid item xs={12} md={7}>
           <Typography
             variant="h2"
-            my=".5em"
+            mb=".5em"
             sx={{ fontWeight: "bolder", fontSize: { xs: "2em", md: "4em" } }}
           >
             Increase your{" "}

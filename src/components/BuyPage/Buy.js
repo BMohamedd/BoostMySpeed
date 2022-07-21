@@ -22,7 +22,7 @@ function Buy() {
       <NavBar />
       <Container maxWidth="xl">
         <Stepper
-          sx={{ mt: "8em", color: "#9c27b0" }}
+          sx={{ mt: { xs: "10em", sm: "8em" }, color: "#9c27b0" }}
           activeStep={Number(Item)}
           alternativeLabel
         >
