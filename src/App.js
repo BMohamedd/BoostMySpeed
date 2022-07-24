@@ -11,7 +11,9 @@ import PrivacyPolicy from "./components/Privacy and TOS/PrivacyPolicy";
 import TOS from "./components/Privacy and TOS/TermsOS";
 import Success from "./components/successPage/Success";
 import "./App.css";
+import Careers from "./components/Careers/Careers";
 import Scroll from "./components/other/scroll/Scroll";
+import Faqs from "./components/FAQsPage/Faqs";
 
 function App() {
   return (
@@ -21,7 +23,9 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="/start-deep-scan" element={<HomePage />} />
         <Route path="/playGround" element={<Test />} />
+        <Route path="/faqs" element={<Faqs />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/careers" element={<Careers />} />
         <Route path="/plans" element={<Plans />} />
         <Route path="/success" element={<Success />} />
         <Route path="/buy/:name" element={<Buy />} />

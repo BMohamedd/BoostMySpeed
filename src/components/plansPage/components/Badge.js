@@ -8,13 +8,13 @@ function Badge() {
         background: "silver",
         color: "#fff",
         width: "100%",
-        paddingY: ".25em",
+        paddingY: ".125em",
         position: "absolute",
         top: 10,
       }}
     >
       <Typography
-        sx={{ fontSize: { xs: "1em", sm: "1.5em" }, fontWeight: "bolder" }}
+        sx={{ fontSize: { xs: ".8em", sm: "1em" }, fontWeight: "bolder" }}
         color="white"
         textAlign="center"
       >

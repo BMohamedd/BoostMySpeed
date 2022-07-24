@@ -2,19 +2,37 @@ export const plansData = [
   {
     name: "Basic",
     price: "85",
-    features:
-      "30 Days Money Back Guarantee, Browser caching , Resize photos, Minification, 2 Revisions ",
+    features: [
+      { name: "30 Days Money Back Guarantee", included: true },
+      { name: "Browser caching", included: true },
+      { name: "Browser caching", included: true },
+      { name: "Minification", included: true },
+      { name: "Database optimization", included: false },
+      { name: "Software version upgrade", included: false },
+    ],
   },
   {
     name: "Standard",
     price: "110",
-    features:
-      "30 Days Money Back Guarantee, Browser caching, Resize photos, MinificationDatabase optimization, 3 Revisions",
+    features: [
+      { name: "30 Days Money Back Guarantee", included: true },
+      { name: "Browser caching", included: true },
+      { name: "Browser caching", included: true },
+      { name: "Minification", included: true },
+      { name: "Database optimization", included: true },
+      { name: "Software version upgrade", included: false },
+    ],
   },
   {
     name: "Premium",
     price: "145",
-    features:
-      "30 Days Money Back Guarantee, Browser caching, Resize photos, MinificationDatabase optimization, 3 Revisions, Software version upgrade, UNLIMITED Revisions",
+    features: [
+      { name: "30 Days Money Back Guarantee", included: true },
+      { name: "Browser caching", included: true },
+      { name: "Browser caching", included: true },
+      { name: "Minification", included: true },
+      { name: "Software version upgrade", included: true },
+      { name: "Database optimization", included: true },
+    ],
   },
 ];

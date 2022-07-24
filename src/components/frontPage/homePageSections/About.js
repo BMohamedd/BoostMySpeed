@@ -29,7 +29,7 @@ function About() {
     {
       img: health,
       header: "Health Checker",
-      body: "Get a complete list of installed apps that effect your site from acheiving loading quickly. This audit analyzes your site to detect all the apps that effect your site speed- including the ones you think you uninstalled...",
+      body: "Get a complete list of installed apps that effect your site from acheiving loading quickly. This audit analyzes your site to detect all the apps that effect your site speed, performance and CEO...",
     },
     {
       img: build,

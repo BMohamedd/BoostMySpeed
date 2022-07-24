@@ -2,7 +2,7 @@ import { Paper, Box, Typography, Stack, Divider, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import React from "react";
 import CheckIcon from "@mui/icons-material/Check";
-import "./Card.css";
+import CloseIcon from "@mui/icons-material/Close";
 
 function Card({ name, price, features, children }) {
   const navigate = useNavigate();
@@ -17,47 +17,44 @@ function Card({ name, price, features, children }) {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          py: "4em",
+          py: "3.3em",
         }}
       >
         <Typography
           textAlign="center"
-          variant="h4"
+          variant="h5"
           sx={{ fontWeight: "bolder" }}
         >
           {name}
         </Typography>
         <Typography textAlign="center" color="white">
-          <strong style={{ fontSize: "2em" }}>${price}</strong>{" "}
+          <strong style={{ fontSize: "1.5em" }}>${price}</strong>{" "}
           <strong>/ Website</strong>{" "}
         </Typography>
       </Box>
       {/* features */}
-      <Stack
-        py="2em"
-        alignItems="start"
-        id="scrollContainer"
-        sx={{
-          height: "200px",
-          overflowY: "scroll",
-        }}
-      >
-        {features.split(",").map((feature) => {
+      <Stack py="1em" alignItems="start" id="scrollContainer">
+        {features.map((feature) => {
           return (
             <Typography
               alignSelf="flex-start"
               sx={{
                 marginLeft: "1em",
                 mb: "1em",
-                fontSize: "1.25em",
+                fontSize: "1em",
                 display: "flex",
                 gap: "10px",
                 alignItems: "center",
               }}
-              color="gray"
+              color={feature.included ? "black" : "gray"}
             >
-              <CheckIcon color="secondary" />
-              <span>{feature}</span>
+              {feature.included ? (
+                <CheckIcon color="success" />
+              ) : (
+                <CloseIcon color="error" />
+              )}
+
+              <span>{feature.name}</span>
             </Typography>
           );
         })}
@@ -66,7 +63,7 @@ function Card({ name, price, features, children }) {
       {/* button */}
       <Box
         sx={{
-          marginTop: "2em",
+          marginTop: "1em",
           paddingBottom: "1em",
           display: "grid",
         }}

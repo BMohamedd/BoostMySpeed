@@ -59,7 +59,7 @@ function WhatTheySay() {
                 color="secondary"
                 component="p"
               >
-                100+
+                8K
               </Typography>
               <Typography>Happy Custumers</Typography>
             </Box>

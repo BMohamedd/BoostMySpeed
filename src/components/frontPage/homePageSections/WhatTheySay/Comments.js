@@ -24,12 +24,12 @@ function Comments() {
     {
       photoURL: "https://i.imgur.com/mR8wKtv.jpg",
       name: "James Samuels",
-      text: "You Are just an absolute animal, They boosted the speed of my website to 95+ when I thought it was just impossible. I have worked with like 5 freelancers and overall You Guys Are just on another level. Thank you man, very recommended!!",
+      text: "They Are just absolute animals, They boosted the speed of my website to 95+ when I thought it was just impossible. I have worked with like 5 freelancers and overall You Guys Are just on another level. Thank you man, very recommended!!",
       occupation: "Entrepreneur",
     },
     {
       name: "Margaret Chang",
-      text: "This person is not good, he is amazing doing his job. He even contacted my hosting service to make sure everything works fine. It is worth every penny invested. I will work with him again.",
+      text: "They are not good, they are amazing doing his job. He even contacted my hosting service to make sure everything works fine. It is worth every penny invested. I will work with him again.",
       photoURL: "https://i.imgur.com/02c24HZ.jpg",
       occupation: "Junior Website Developer",
     },
@@ -45,7 +45,7 @@ function Comments() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       handleNext();
-    }, 3000);
+    }, 15000);
     return () => {
       clearInterval(intervalId);
     };
@@ -78,7 +78,7 @@ function Comments() {
         variant="body1"
         component="p"
         mt="1em"
-        sx={{ height: { xs: "200px", md: "150px" } }}
+        sx={{ height: { xs: "300px", sm: "200px" } }}
       >
         "{Content[displayed].text}"
       </Typography>

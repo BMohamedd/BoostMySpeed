@@ -8,7 +8,7 @@ function DisplayAnalysisCTA({ progress }) {
 
   const text =
     progress < 50
-      ? "Your Site Is Much Slower Than Other Sites"
+      ? "maybe to Your site is much slower then others! your score is"
       : progress > 90
       ? "Well done! Your performance score is"
       : "Your performance score is";

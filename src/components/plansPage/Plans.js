@@ -20,7 +20,7 @@ function Plans() {
       <Container maxWidth="xl">
         <Stepper
           sx={{ mt: "8em", color: "#9c27b0" }}
-          activeStep={"0"}
+          activeStep={0}
           alternativeLabel
         >
           {steps.map((label) => (
@@ -35,14 +35,14 @@ function Plans() {
           sx={{ justifyContent: { xs: "center", sm: "space-between" } }}
           mt="2em"
         >
-          <Grid item xs={11} sm={5.5} lg={3.5}>
+          <Grid item xs={11} sm={5.5} md={4} lg={4}>
             <Card
               name={plansData[0].name}
               price={plansData[0].price}
               features={plansData[0].features}
             />
           </Grid>
-          <Grid item xs={11} sm={5.5} lg={4}>
+          <Grid item xs={11} sm={5.5} md={4} lg={4}>
             <Card
               name={plansData[1].name}
               price={plansData[1].price}
@@ -51,7 +51,7 @@ function Plans() {
               <Badge />
             </Card>
           </Grid>
-          <Grid item xs={11} sm={5.5} lg={3.5}>
+          <Grid item xs={11} sm={5.5} md={4} lg={4}>
             <Card
               name={plansData[2].name}
               price={plansData[2].price}

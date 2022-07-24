@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import { useNavigate } from "react-router-dom";
-import { Typography, Container, Grid, LinearProgress } from "@mui/material";
+import {
+  Typography,
+  Container,
+  Grid,
+  LinearProgress,
+  Box,
+} from "@mui/material";
 import NavBar from "../other/NavBar";
 import Footer from "../frontPage/homePageSections/Footer";
 import success from "../../assets/success.svg";
@@ -14,7 +20,7 @@ function Success() {
     changeItem("1");
     setTimeout(() => {
       navigate("/");
-    }, 5000);
+    }, 15000);
   }, []);
 
   useEffect(() => {
@@ -24,7 +30,7 @@ function Success() {
         }
         return oldProgress + 10;
       });
-    }, 500);
+    }, 1500);
 
     return () => {
       clearInterval(timer);
@@ -53,22 +59,25 @@ function Success() {
               <span
                 style={{ borderBottom: "5px solid #9c27b0", color: "#9c27b0" }}
               >
-                Hurray!
+                Yay!
               </span>{" "}
               You Did It!
             </Typography>
             <Typography variant="h5" width="70%">
-              Thanks for purchasing we are starting to improve your site speed!
+              Thank you for your purchase our speed optimization specialist will
+              contact you soon via email
             </Typography>
-            <Typography color="gray" mt="2em">
-              YOU WILL BE REDIRECTED TO THE HOME PAGE IN 5 SECONDS
-            </Typography>
-            <LinearProgress
-              sx={{ width: "60%" }}
-              color="secondary"
-              variant="determinate"
-              value={progress}
-            />
+            <Box sx={{ width: "60%" }}>
+              <Typography color="gray" mt="2em" sx={{ width: "100%" }}>
+                You Will Be Redirected To The Home Page In 15 Seconds...
+              </Typography>
+              <LinearProgress
+                sx={{ width: "100%" }}
+                color="secondary"
+                variant="determinate"
+                value={progress}
+              />
+            </Box>
           </Grid>
           <Grid
             item

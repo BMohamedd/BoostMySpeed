@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 function GetStarted2() {
   const navigate = useNavigate("");
   return (
-    <Box sx={{ background: "#ddd", paddingY: "2em" }}>
+    <Box sx={{ paddingY: "2em" }}>
       <Container
         maxWidth="xl"
         sx={{

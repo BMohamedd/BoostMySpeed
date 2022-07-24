@@ -117,7 +117,7 @@ function WesiteInfo() {
                   variant="standard"
                   helperText="Please Enter A Valid Url"
                   maxLength="320"
-                  label="host Priver"
+                  label="host provider"
                   required
                 />
               </Grid>

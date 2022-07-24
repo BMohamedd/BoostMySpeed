@@ -6,8 +6,10 @@ import SpeedDialAction from "@mui/material/SpeedDialAction";
 import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
 import LocationSearchingIcon from "@mui/icons-material/LocationSearching";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import GroupsIcon from "@mui/icons-material/Groups";
 import PersonIcon from "@mui/icons-material/Person";
 import { useNavigate } from "react-router-dom";
+import InfoIcon from "@mui/icons-material/Info";
 
 export default function SpeedDialComponent() {
   const navigate = useNavigate();
@@ -27,6 +29,20 @@ export default function SpeedDialComponent() {
         sx={{ position: "fixed", bottom: 16, right: 16 }}
         icon={<SpeedDialIcon openIcon={<ElectricBoltIcon />} />}
       >
+        <SpeedDialAction
+          onClick={() => {
+            navigate("/careers");
+          }}
+          icon={<GroupsIcon />}
+          tooltipTitle="Work with Us"
+        />
+        <SpeedDialAction
+          onClick={() => {
+            navigate("/faqs");
+          }}
+          icon={<InfoIcon />}
+          tooltipTitle="FAQs"
+        />
         <SpeedDialAction
           onClick={() => {
             navigate("/contact");
