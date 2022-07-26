@@ -1,10 +1,8 @@
-import { Box, Grid, Stack, Typography } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
-import partners from "../../../assets/friends.png";
-import whyus from "../../../assets/whyUs.svg";
-import Reason from "./Reason";
-
+import whyus from "../../../../assets/whyUs.svg";
+import MainContent from "./MainContent";
 function MulitpicSection() {
   return (
     <Container
@@ -28,7 +26,12 @@ function MulitpicSection() {
           />
         </Grid>
         {/* text */}
-        <Grid item xs={12} md={5.8}>
+        <Grid
+          item
+          xs={12}
+          md={5.8}
+          sx={{ display: "flex", flexDirection: "column", gap: "1em" }}
+        >
           {/* titles */}
           <Typography
             color="secondary"
@@ -41,26 +44,23 @@ function MulitpicSection() {
             component="p"
             sx={{ fontSize: "2em", fontWeight: "bolder" }}
           >
-            Why <span style={{ color: "#9c27b0" }}>Choose</span> Us?
+            Wondering why your page is
+            <span style={{ color: "#9c27b0" }}> slow?</span>
           </Typography>
           {/* reason to choose us */}
           <Typography sx={{ width: { xs: "90%", sm: "80%" } }}>
-            With Our Years of Experiance And Team Of Professionals We Guarantee
-            Fast Delivary and A Good Experiance For You We alse Offer a 100%
-            money Back Guarantee if You're Not Satisfied With The Results So Why
-            waste Time Start Today!{" "}
+            See how your site performs, reveal why it's slow, and discover
+            optimization opportunities
           </Typography>
-          {/* partners */}
-          <Box mt="4em" sx={{ width: { xs: "100%", sm: "70%", md: "60%" } }}>
-            <Typography
-              color="secondary"
-              component="h3"
-              sx={{ fontSize: "1em", fontWeight: "bolder" }}
-            >
-              Our Partners
-            </Typography>
-            <img width="100%" src={partners} alt="our partners" />
-          </Box>
+          {/* main Section */}
+          <MainContent />
+          <Button
+            variant="outlined"
+            color="secondary"
+            onClick={() => window.scroll(0, 0)}
+          >
+            Test My Speed For Free!
+          </Button>
         </Grid>
       </Grid>
     </Container>

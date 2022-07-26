@@ -88,7 +88,7 @@ function Faqs() {
                 );
               })}
             </Box>
-            <Title preStrong="still have other" strong="Question?" />
+            <Title preStrong="Still have other" strong="Question?" />
             <Typography variant="h6" color="gray" sx={{ mt: "1em" }}>
               Can't find the answer?{" "}
               <Link

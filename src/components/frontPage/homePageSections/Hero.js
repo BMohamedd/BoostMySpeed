@@ -21,14 +21,15 @@ function Hero() {
             mb=".5em"
             sx={{ fontWeight: "bolder", fontSize: { xs: "2em", md: "4em" } }}
           >
-            Increase your{" "}
-            <span style={{ borderBottom: "5px solid #9c27b0" }}>PROFITS</span> &{" "}
-            <span style={{ borderBottom: "5px solid #9c27b0" }}>SPEED</span>{" "}
-            Today!
+            Improve your sales with a
+            <span style={{ borderBottom: "5px solid #9c27b0" }}>
+              faster website
+            </span>{" "}
+            & Today!
           </Typography>
           <Typography variant="h5" width="70%">
-            See how your site performs, reveal why it's slow and discover
-            optimization opportunities.
+            The average user takes 2 seconds to decide if he wants to stay on
+            your site or not! How fast does your website load?
           </Typography>
           <SearchArea />
         </Grid>

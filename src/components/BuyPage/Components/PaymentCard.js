@@ -1,8 +1,9 @@
 import { Paper, Box, Typography, Stack, Divider } from "@mui/material";
 import React from "react";
-import CheckIcon from "@mui/icons-material/Check";
 import PaymentBadge from "./PaymentBadge";
 import { paymentcontext } from "../../../Context/Payment/paymentContextProvider";
+import CheckIcon from "@mui/icons-material/Check";
+import CloseIcon from "@mui/icons-material/Close";
 
 function PaymentCard({ name, price, features }) {
   const { changePlanAndPrice } = React.useContext(paymentcontext);
@@ -32,7 +33,7 @@ function PaymentCard({ name, price, features }) {
         </Typography>
       </Box>
       <Stack py="2em" alignItems="start">
-        {features.split(",").map((feature) => {
+        {features.map((feature) => {
           return (
             <Typography
               key={feature}
@@ -47,8 +48,12 @@ function PaymentCard({ name, price, features }) {
               }}
               color="gray"
             >
-              <CheckIcon color="secondary" />
-              <span>{feature}</span>
+              {feature.included ? (
+                <CheckIcon color="success" />
+              ) : (
+                <CloseIcon color="error" />
+              )}
+              <span>{feature.name}</span>
             </Typography>
           );
         })}

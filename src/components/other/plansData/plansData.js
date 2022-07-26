@@ -3,7 +3,6 @@ export const plansData = [
     name: "Basic",
     price: "85",
     features: [
-      { name: "30 Days Money Back Guarantee", included: true },
       { name: "Browser caching", included: true },
       { name: "Browser caching", included: true },
       { name: "Minification", included: true },
@@ -15,7 +14,6 @@ export const plansData = [
     name: "Standard",
     price: "110",
     features: [
-      { name: "30 Days Money Back Guarantee", included: true },
       { name: "Browser caching", included: true },
       { name: "Browser caching", included: true },
       { name: "Minification", included: true },
@@ -27,7 +25,6 @@ export const plansData = [
     name: "Premium",
     price: "145",
     features: [
-      { name: "30 Days Money Back Guarantee", included: true },
       { name: "Browser caching", included: true },
       { name: "Browser caching", included: true },
       { name: "Minification", included: true },

@@ -6,7 +6,7 @@ const availableJobs = [
     jobType: "Remote",
   },
   {
-    name: "full-stack Developer",
+    name: "Full-stack Developer",
     skill: "programming",
     team: "Programming ",
     jobType: "Remote",

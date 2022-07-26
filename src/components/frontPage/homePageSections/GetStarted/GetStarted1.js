@@ -27,16 +27,19 @@ function GetStarted1() {
           Start now
         </Typography>
         <Typography
-          component="p"
-          sx={{ fontSize: "2em", fontWeight: "bolder" }}
+          sx={{ fontSize: "3em", fontWeight: "bolder" }}
+          component="h2"
           textAlign="center"
         >
-          Make Your Dream Project{" "}
-          <span style={{ color: "#9c27b0" }}>Faster</span>
+          Users
+          <span style={{ color: "#9c27b0" }}> HATE </span>slow websites!
         </Typography>
-        <Typography textAlign="center" color="gray">
-          Find out why We are trusted by developers and teams around the world,
-          To Take Their business To the next level.
+        <Typography
+          sx={{ fontSize: "1.5em", fontWeight: "bolder" }}
+          component="p"
+          textAlign="center"
+        >
+          Boost Site Load Speed, Page Ranks and Conversion Rates.
         </Typography>
         <Box
           sx={{
@@ -47,15 +50,20 @@ function GetStarted1() {
           }}
         >
           <Button
-            variant="contained"
+            variant="outlined"
             disableElevation
             onClick={() => navigate("/plans")}
             color="secondary"
-            sx={{ width: "60%" }}
+            sx={{ width: { xs: "60%", md: "30%" }, mt: "2em", height: "60px" }}
             endIcon={<ArrowForwardIosIcon />}
           >
             {" "}
-            Get Started
+            <Typography
+              color="secondary"
+              sx={{ fontSize: "1.5em", fontWeight: "bolder" }}
+            >
+              Let's Do it
+            </Typography>
           </Button>
         </Box>
       </Container>

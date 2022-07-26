@@ -71,41 +71,45 @@ function Careers() {
         <Typography
           variant="h4"
           fontWeight="bolder"
-          mt="2em"
-          mb="2em"
+          pt="4em"
+          pb="2em"
           color="gray"
           textAlign="center"
+          ref={tableComponent}
         >
           Work with us
         </Typography>
-        <Table ref={tableComponent}>
-          <TableHead>
-            <TableCell>
-              <Typography sx={{ fontWeight: "Bolder" }}>
-                Open Positions: {availableJobs.length}
-              </Typography>
-            </TableCell>
-            <TableCell>Skill Required</TableCell>
-            <TableCell>Team</TableCell>
-            <TableCell sx={{ display: { xs: "none", sm: "inline" } }}>
-              Job Type
-            </TableCell>
-          </TableHead>
-          <TableBody>
-            {availableJobs.map((job) => {
-              return (
-                <TableRow key={job.name}>
-                  <TableCell>{job.name}</TableCell>
-                  <TableCell>{job.skill}</TableCell>
-                  <TableCell>{job.team}</TableCell>
-                  <TableCell sx={{ display: { xs: "none", sm: "inline" } }}>
-                    {job.jobType}
-                  </TableCell>
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
+        <Box sx={{ width: "100%", overflowX: "scroll" }}>
+          <Table sx={{ width: "100%" }}>
+            <TableHead>
+              <TableCell>
+                <Typography sx={{ fontWeight: "Bolder" }}>
+                  Open Positions: {availableJobs.length}
+                </Typography>
+              </TableCell>
+              <TableCell>Skill Required</TableCell>
+              <TableCell>Team</TableCell>
+              <TableCell>Job Type</TableCell>
+              <TableCell>send resume</TableCell>
+            </TableHead>
+            <TableBody>
+              {availableJobs.map((job) => {
+                return (
+                  <TableRow key={job.name}>
+                    <TableCell>{job.name}</TableCell>
+                    <TableCell>{job.skill}</TableCell>
+                    <TableCell>{job.team}</TableCell>
+                    <TableCell>{job.jobType}</TableCell>
+                    <TableCell>
+                      {" "}
+                      <Link to={{ pathname: "/contact" }}>click here</Link>
+                    </TableCell>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </Box>
         <Box mt="2em">
           <Alert severity="info">
             <Link to={{ pathname: "/contact" }}>

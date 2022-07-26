@@ -10,6 +10,14 @@ function WhatTheySay() {
   return (
     <Box sx={{ background: "#ddd", paddingY: "2em" }}>
       <Container maxWidth="xl">
+        <Typography
+          component="h3"
+          sx={{ fontSize: "2em", fontWeight: "bold" }}
+          textAlign="center"
+          mb="1em"
+        >
+          What Our Clients Say About Us
+        </Typography>
         <Grid
           container
           sx={{
@@ -18,51 +26,11 @@ function WhatTheySay() {
           }}
         >
           {/* text */}
-          <Grid item xs={12} md={5.8}>
+          <Grid item xs={12} md={12}>
             {" "}
             <Paper sx={{ padding: "1em 3em" }}>
               <Comments />
             </Paper>
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            md={5.8}
-            sx={{ display: "flex", justifyContent: "space-evenly" }}
-          >
-            <Box
-              sx={{
-                width: "40%",
-                borderLeft: "1px solid gray",
-                boxSizing: "border-box",
-                paddingLeft: "2em",
-              }}
-            >
-              <Typography
-                sx={{ fontSize: "2em", fontWeight: "bolder" }}
-                color="secondary"
-                component="p"
-              >
-                17.3k
-              </Typography>
-              <Typography>DEEP SCANS RUNS</Typography>
-            </Box>
-            <Box
-              sx={{
-                width: "40%",
-                borderLeft: "1px solid gray",
-                paddingLeft: "1em",
-              }}
-            >
-              <Typography
-                sx={{ fontSize: "2em", fontWeight: "bolder" }}
-                color="secondary"
-                component="p"
-              >
-                8K
-              </Typography>
-              <Typography>Happy Custumers</Typography>
-            </Box>
           </Grid>
         </Grid>
       </Container>

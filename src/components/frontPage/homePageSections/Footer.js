@@ -1,7 +1,7 @@
 import React from "react";
-import { Box, Stack, Container, Typography } from "@mui/material";
+import { Box, Stack, Container, Typography, Divider } from "@mui/material";
 import Whitelogo from "../../../assets/LogoWhite.png";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Footer() {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ function Footer() {
         <Container
           sx={{
             display: "flex",
-            alignItems: "center",
+            justifyContent: "space-between",
             gap: "1em",
             flexWrap: "wrap",
           }}
@@ -49,21 +49,110 @@ function Footer() {
               Copyright &copy;
               {new Date().getFullYear() + " "} - Speedyourweb
             </Typography>
+            <a
+              style={{
+                background: "#FFF",
+                padding: "10px 20px",
+                textDecoration: "none",
+                fontSize: "20px",
+                color: "#9c27b0",
+                fontFamily: "helvetica",
+                textAlign: "center",
+                marginTop: "1em",
+              }}
+              onClick={() => navigate("/contact")}
+              href=""
+            >
+              Contact Us
+            </a>
           </Stack>
-          <a
-            style={{
-              background: "#FFF",
-              padding: "10px 20px",
-              textDecoration: "none",
-              fontSize: "20px",
-              color: "#9c27b0",
-              fontFamily: "helvetica",
-            }}
-            onClick={() => navigate("/contact")}
-            href=""
-          >
-            Contact Us
-          </a>
+          <Stack justifyContent="space-between">
+            <Typography fontSize="1.2em" fontWeight="bolder" color="white">
+              HELP
+            </Typography>
+            <Link
+              style={{ color: "white" }}
+              to={{
+                pathname: "/careers",
+              }}
+            >
+              Careers
+            </Link>
+            <Link
+              style={{ color: "white" }}
+              to={{
+                pathname: "/contact",
+              }}
+            >
+              contact
+            </Link>
+            <Link
+              style={{ color: "white" }}
+              to={{
+                pathname: "/faqs",
+              }}
+            >
+              FAQs
+            </Link>
+          </Stack>
+          <Stack justifyContent="space-between">
+            <Typography fontSize="1.2em" fontWeight="bolder" color="white">
+              SERVICE
+            </Typography>
+            <Link
+              style={{ color: "white" }}
+              to={{
+                pathname: "/start-deep-scan",
+              }}
+            >
+              DEEP SCAN
+            </Link>
+            <Link
+              style={{ color: "white" }}
+              to={{
+                pathname: "/plans",
+              }}
+            >
+              Plans
+            </Link>
+            <Link
+              style={{ color: "white" }}
+              to={{
+                pathname: "/",
+              }}
+            >
+              Home Page
+            </Link>
+          </Stack>
+          <Stack justifyContent="space-between">
+            <Typography fontSize="1.2em" fontWeight="bolder" color="white">
+              LEGAL
+            </Typography>
+            <Link
+              style={{ color: "white" }}
+              to={{
+                pathname: "/Privacy-Policy",
+              }}
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              style={{ color: "white" }}
+              to={{
+                pathname: "/Terms-And-Conditions",
+              }}
+            >
+              Terms And Conditions
+            </Link>
+            <Link
+              style={{ color: "white" }}
+              to={{
+                pathname: "/Privacy-Policy",
+              }}
+            >
+              Cookie Policy
+            </Link>
+          </Stack>
         </Container>
       </Box>
     </div>
