@@ -18,7 +18,7 @@ function FinishPayment() {
   // all this effect is doing is scrolling to the paypal button if the devise is a mobile (smaller than 600px)
   React.useEffect(() => {
     if (600 >= window.screen.width) {
-      payment.current.scrollIntoView();
+      payment.current.scrollIntoView({ block: "center" });
     }
   }, []);
 
@@ -32,7 +32,7 @@ function FinishPayment() {
         mt="2em"
       >
         {/* payment */}
-        <Grid item xs={12} sm={7.9} lg={8}>
+        <Grid item xs={12} sm={6} lg={6}>
           <Typography color="gray" sx={{ fontWeight: "bolder" }}>
             SELECTED PLAN:
           </Typography>
@@ -45,13 +45,9 @@ function FinishPayment() {
               features={PlanToDisplay.features}
             />
           </Box>
-          <Divider />
-          <Box sx={{ mt: "2em" }} ref={payment}>
-            <PaypalComponent price={PlanToDisplay.price} />
-          </Box>
         </Grid>
         {/* summary */}
-        <Grid item xs={12} sm={4} lg={4}>
+        <Grid item xs={12} sm={6} lg={6}>
           <Title preStrong="" strong="Summary:" postStrong="" />
           <Typography
             variant="body2"
@@ -88,6 +84,10 @@ function FinishPayment() {
           <Typography variant="body2" color="gray" mb="2em">
             USD
           </Typography>
+          <Divider />
+          <Box sx={{ mt: "2em" }} ref={payment}>
+            <PaypalComponent price={PlanToDisplay.price} />
+          </Box>
         </Grid>
       </Grid>
     </Container>

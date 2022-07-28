@@ -57,7 +57,7 @@ function MainContent() {
             </Tooltip>
           </Typography>
           <ProgressBar progress="92" />
-          <Metrics progress="77" />
+          <Metrics progress="92" />
         </Stack>
       </Grid>
       <Grid item xs={12} sm={5.5} md={8}>

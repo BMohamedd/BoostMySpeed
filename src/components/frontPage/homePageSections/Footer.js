@@ -1,5 +1,12 @@
 import React from "react";
-import { Box, Stack, Container, Typography, Divider } from "@mui/material";
+import {
+  Box,
+  Stack,
+  Container,
+  Typography,
+  Divider,
+  Grid,
+} from "@mui/material";
 import Whitelogo from "../../../assets/LogoWhite.png";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -19,140 +26,174 @@ function Footer() {
         ></path>
       </svg>
       <Box sx={{ background: "#9c27b0", py: "2em" }}>
-        <Container
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            gap: "1em",
-            flexWrap: "wrap",
-          }}
-        >
-          <Stack>
-            <Box sx={{ display: "flex", alignItems: "center", gap: "5px" }}>
-              <img src={Whitelogo} alt="logo" width="15px" />
-              <Typography
-                variant="h5"
-                noWrap
-                component="a"
-                sx={{
-                  mr: 2,
-                  fontFamily: "monospace",
-                  fontWeight: 700,
-                  color: "#fff",
-                  textDecoration: "none",
-                }}
+        <Container maxWidth="lg">
+          <Grid
+            container
+            justifyContent="space-between"
+            alignItems="center"
+            gap="1em"
+          >
+            <Grid
+              item
+              xs={12}
+              md={4}
+              sx={{ display: "flex", justifyContent: "center" }}
+            >
+              <Stack sx={{ width: "fit-content" }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "5px",
+                    justifyContent: { xs: "center", md: "start" },
+                  }}
+                >
+                  <img src={Whitelogo} alt="logo" width="15px" />
+                  <Typography
+                    variant="h5"
+                    noWrap
+                    component="a"
+                    sx={{
+                      mr: 2,
+                      fontFamily: "monospace",
+                      fontWeight: 700,
+                      color: "#fff",
+                      textDecoration: "none",
+                    }}
+                  >
+                    Speedyourweb
+                  </Typography>
+                </Box>
+                <Typography
+                  color="white"
+                  sx={{ textAlign: { xs: "center", md: "start" } }}
+                >
+                  Copyright &copy;
+                  {new Date().getFullYear() + " "} - Speedyourweb
+                </Typography>
+                <a
+                  style={{
+                    background: "#FFF",
+                    padding: "10px 20px",
+                    textDecoration: "none",
+                    fontSize: "20px",
+                    color: "#9c27b0",
+                    fontFamily: "helvetica",
+                    textAlign: "center",
+                    marginTop: "1em",
+                  }}
+                  onClick={() => navigate("/contact")}
+                  href=""
+                >
+                  Contact Us
+                </a>
+              </Stack>
+            </Grid>
+            <Grid item xs={12} md={2}>
+              <Stack
+                justifyContent="space-between"
+                sx={{ textAlign: { xs: "center", md: "start" } }}
               >
-                Speedyourweb
-              </Typography>
-            </Box>
-            <Typography color="white">
-              Copyright &copy;
-              {new Date().getFullYear() + " "} - Speedyourweb
-            </Typography>
-            <a
-              style={{
-                background: "#FFF",
-                padding: "10px 20px",
-                textDecoration: "none",
-                fontSize: "20px",
-                color: "#9c27b0",
-                fontFamily: "helvetica",
-                textAlign: "center",
-                marginTop: "1em",
-              }}
-              onClick={() => navigate("/contact")}
-              href=""
-            >
-              Contact Us
-            </a>
-          </Stack>
-          <Stack justifyContent="space-between">
-            <Typography fontSize="1.2em" fontWeight="bolder" color="white">
-              HELP
-            </Typography>
-            <Link
-              style={{ color: "white" }}
-              to={{
-                pathname: "/careers",
-              }}
-            >
-              Careers
-            </Link>
-            <Link
-              style={{ color: "white" }}
-              to={{
-                pathname: "/contact",
-              }}
-            >
-              contact
-            </Link>
-            <Link
-              style={{ color: "white" }}
-              to={{
-                pathname: "/faqs",
-              }}
-            >
-              FAQs
-            </Link>
-          </Stack>
-          <Stack justifyContent="space-between">
-            <Typography fontSize="1.2em" fontWeight="bolder" color="white">
-              SERVICE
-            </Typography>
-            <Link
-              style={{ color: "white" }}
-              to={{
-                pathname: "/start-deep-scan",
-              }}
-            >
-              DEEP SCAN
-            </Link>
-            <Link
-              style={{ color: "white" }}
-              to={{
-                pathname: "/plans",
-              }}
-            >
-              Plans
-            </Link>
-            <Link
-              style={{ color: "white" }}
-              to={{
-                pathname: "/",
-              }}
-            >
-              Home Page
-            </Link>
-          </Stack>
-          <Stack justifyContent="space-between">
-            <Typography fontSize="1.2em" fontWeight="bolder" color="white">
-              LEGAL
-            </Typography>
-            <Link
-              style={{ color: "white" }}
-              to={{
-                pathname: "/Privacy-Policy",
-              }}
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              style={{ color: "white" }}
-              to={{
-                pathname: "/Terms-And-Conditions",
-              }}
-            >
-              Terms And Conditions
-            </Link>
-            <Link
-              style={{ color: "white" }}
-              to={{
-                pathname: "/Privacy-Policy",
-              }}
-            >
-              Cookie Policy
-            </Link>
-          </Stack>
+                <Typography fontSize="1.2em" fontWeight="bolder" color="white">
+                  HELP
+                </Typography>
+                <Link
+                  style={{ color: "white", textDecoration: "none" }}
+                  to={{
+                    pathname: "/careers",
+                  }}
+                >
+                  Careers
+                </Link>
+                <Link
+                  style={{ color: "white", textDecoration: "none" }}
+                  to={{
+                    pathname: "/contact",
+                  }}
+                >
+                  contact
+                </Link>
+                <Link
+                  style={{ color: "white", textDecoration: "none" }}
+                  to={{
+                    pathname: "/faqs",
+                  }}
+                >
+                  FAQs
+                </Link>
+              </Stack>
+            </Grid>
+
+            <Grid item xs={12} md={2}>
+              <Stack
+                justifyContent="space-between"
+                sx={{ textAlign: { xs: "center", md: "start" } }}
+              >
+                <Typography fontSize="1.2em" fontWeight="bolder" color="white">
+                  SERVICE
+                </Typography>
+                <Link
+                  style={{ color: "white", textDecoration: "none" }}
+                  to={{
+                    pathname: "/start-deep-scan",
+                  }}
+                >
+                  Deep Scan
+                </Link>
+                <Link
+                  style={{ color: "white", textDecoration: "none" }}
+                  to={{
+                    pathname: "/plans",
+                  }}
+                >
+                  Plans
+                </Link>
+                <Link
+                  style={{ color: "white", textDecoration: "none" }}
+                  to={{
+                    pathname: "/",
+                  }}
+                >
+                  Home Page
+                </Link>
+              </Stack>
+            </Grid>
+
+            <Grid item xs={12} md={2}>
+              <Stack
+                justifyContent="space-between"
+                sx={{ textAlign: { xs: "center", md: "start" } }}
+              >
+                <Typography fontSize="1.2em" fontWeight="bolder" color="white">
+                  LEGAL
+                </Typography>
+                <Link
+                  style={{ color: "white", textDecoration: "none" }}
+                  to={{
+                    pathname: "/Privacy-Policy",
+                  }}
+                >
+                  Privacy Policy
+                </Link>
+                <Link
+                  style={{ color: "white", textDecoration: "none" }}
+                  to={{
+                    pathname: "/Terms-And-Conditions",
+                  }}
+                >
+                  Terms And Conditions
+                </Link>
+                <Link
+                  style={{ color: "white", textDecoration: "none" }}
+                  to={{
+                    pathname: "/Privacy-Policy",
+                  }}
+                >
+                  Cookie Policy
+                </Link>
+              </Stack>
+            </Grid>
+          </Grid>
         </Container>
       </Box>
     </div>

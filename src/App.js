@@ -14,6 +14,7 @@ import "./App.css";
 import Careers from "./components/Careers/Careers";
 import Scroll from "./components/other/scroll/Scroll";
 import Faqs from "./components/FAQsPage/Faqs";
+import Documentation from "./components/ErrorDocumentation/Documentation";
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
         <Route path="/start-deep-scan" element={<HomePage />} />
         <Route path="/playGround" element={<Test />} />
         <Route path="/faqs" element={<Faqs />} />
+        <Route path="/docs/:type/:name" element={<Documentation />} />
+        <Route path="/docs" element={<Documentation />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/plans" element={<Plans />} />

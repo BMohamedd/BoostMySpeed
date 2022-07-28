@@ -14,7 +14,7 @@ function Parters() {
             style={{ width: "100%", display: "flex", justifyContent: "center" }}
           >
             <img
-              style={{ width: "100%", height: "100px" }}
+              style={{ width: "100%" }}
               src={parters}
               alt="our friend's logos"
             />
@@ -25,7 +25,7 @@ function Parters() {
             start={17345}
             time={4000}
             title="pages analized so far"
-            subtitle="join thousands of people and companies around the world commited to make the web consistantly faster."
+            subtitle="Join thousands of people and companies around the world commited to make the web consistantly faster."
           />
         </Grid>
       </Grid>

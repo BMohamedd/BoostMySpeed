@@ -10,7 +10,9 @@ function NavBar() {
   const location = useLocation();
 
   return (
-    <AppBar sx={{ background: "#fff", color: "#000" }}>
+    <AppBar
+      sx={{ background: "#fff", color: "#000", width: "100vw", pb: ".5em" }}
+    >
       <Container maxWidth="xl">
         {/* NAVIGATION ITEMS  AND CALL TO ACTION */}
         <Grid

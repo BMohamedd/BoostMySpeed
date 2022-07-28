@@ -4,7 +4,6 @@ export const plansData = [
     price: "85",
     features: [
       { name: "Browser caching", included: true },
-      { name: "Browser caching", included: true },
       { name: "Minification", included: true },
       { name: "Database optimization", included: false },
       { name: "Software version upgrade", included: false },
@@ -15,7 +14,6 @@ export const plansData = [
     price: "110",
     features: [
       { name: "Browser caching", included: true },
-      { name: "Browser caching", included: true },
       { name: "Minification", included: true },
       { name: "Database optimization", included: true },
       { name: "Software version upgrade", included: false },
@@ -25,7 +23,6 @@ export const plansData = [
     name: "Premium",
     price: "145",
     features: [
-      { name: "Browser caching", included: true },
       { name: "Browser caching", included: true },
       { name: "Minification", included: true },
       { name: "Software version upgrade", included: true },

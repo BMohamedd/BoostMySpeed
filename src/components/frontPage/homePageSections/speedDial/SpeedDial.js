@@ -4,11 +4,11 @@ import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialIcon from "@mui/material/SpeedDialIcon";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
 import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
-import LocationSearchingIcon from "@mui/icons-material/LocationSearching";
+import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import GroupsIcon from "@mui/icons-material/Groups";
-import PersonIcon from "@mui/icons-material/Person";
 import { useNavigate } from "react-router-dom";
+import ImportContactsIcon from "@mui/icons-material/ImportContacts";
 import InfoIcon from "@mui/icons-material/Info";
 
 export default function SpeedDialComponent() {
@@ -36,6 +36,7 @@ export default function SpeedDialComponent() {
           icon={<GroupsIcon />}
           tooltipTitle="Work with Us"
         />
+
         <SpeedDialAction
           onClick={() => {
             navigate("/faqs");
@@ -45,25 +46,17 @@ export default function SpeedDialComponent() {
         />
         <SpeedDialAction
           onClick={() => {
-            navigate("/contact");
+            navigate("/docs");
           }}
-          icon={<PersonIcon />}
-          tooltipTitle="Contact Us"
+          icon={<ImportContactsIcon />}
+          tooltipTitle="Documentation"
         />
         <SpeedDialAction
+          icon={<ChatBubbleIcon />}
           onClick={() => {
-            window.scrollTo(0, 0);
+            window.location.href = "http://m.me/Speedyourweb";
           }}
-          icon={<LocationSearchingIcon />}
-          tooltipTitle="start Deep Scan"
-        />
-
-        <SpeedDialAction
-          icon={<ShoppingCartIcon />}
-          onClick={() => {
-            navigate("/plans");
-          }}
-          tooltipTitle="View Plans"
+          tooltipTitle="contact us via messanger"
         />
       </SpeedDial>
     </Box>
