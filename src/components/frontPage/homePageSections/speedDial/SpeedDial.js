@@ -18,47 +18,20 @@ export default function SpeedDialComponent() {
       <SpeedDial
         FabProps={{
           sx: {
-            bgcolor: "secondary.main",
+            bgcolor: "primary.main",
             "&:hover": {
-              bgcolor: "secondary.main",
+              bgcolor: "parimary.main",
             },
           },
         }}
         ariaLabel="SpeedDial basic example"
         color="secondary"
         sx={{ position: "fixed", bottom: 16, right: 16 }}
-        icon={<SpeedDialIcon openIcon={<ElectricBoltIcon />} />}
-      >
-        <SpeedDialAction
-          onClick={() => {
-            navigate("/careers");
-          }}
-          icon={<GroupsIcon />}
-          tooltipTitle="Work with Us"
-        />
-
-        <SpeedDialAction
-          onClick={() => {
-            navigate("/faqs");
-          }}
-          icon={<InfoIcon />}
-          tooltipTitle="FAQs"
-        />
-        <SpeedDialAction
-          onClick={() => {
-            navigate("/docs");
-          }}
-          icon={<ImportContactsIcon />}
-          tooltipTitle="Documentation"
-        />
-        <SpeedDialAction
-          icon={<ChatBubbleIcon />}
-          onClick={() => {
-            window.location.href = "http://m.me/Speedyourweb";
-          }}
-          tooltipTitle="contact us via messanger"
-        />
-      </SpeedDial>
+        onClick={() => {
+          window.location.href = "http://m.me/Speedyourweb";
+        }}
+        icon={<ChatBubbleIcon openIcon={<ElectricBoltIcon />} />}
+      ></SpeedDial>
     </Box>
   );
 }

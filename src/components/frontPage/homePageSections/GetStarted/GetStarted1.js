@@ -19,27 +19,19 @@ function GetStarted1() {
       <Container maxWidth="xl">
         {/* text */}
         <Typography
-          color="secondary"
-          component="h3"
-          sx={{ fontSize: "1em", fontWeight: "bolder" }}
-          textAlign="center"
-        >
-          Start now
-        </Typography>
-        <Typography
           sx={{ fontSize: "3em", fontWeight: "bolder" }}
           component="h2"
           textAlign="center"
         >
           Users
-          <span style={{ color: "#9c27b0" }}> HATE </span>slow websites!
+          <span style={{ color: "#9c27b0" }}> hate </span>slow websites!
         </Typography>
         <Typography
           sx={{ fontSize: "1.5em", fontWeight: "bolder" }}
           component="p"
           textAlign="center"
         >
-          Boost Site Load Speed, Page Ranks and Conversion Rates.
+          Boost site load speed, Page ranks and converstion rates.
         </Typography>
         <Box
           sx={{

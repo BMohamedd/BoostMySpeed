@@ -31,18 +31,11 @@ function Satisfaction() {
         >
           {/* titles */}
           <Typography
-            color="secondary"
-            component="h3"
-            sx={{ fontSize: "1em", fontWeight: "bolder" }}
-          >
-            Guarantee
-          </Typography>
-          <Typography
             component="p"
             sx={{ fontSize: { xs: "1.5em", md: "2em" }, fontWeight: "bolder" }}
           >
             100%
-            <span style={{ color: "#9c27b0" }}> Satisfaction!</span>
+            <span style={{ color: "#9c27b0" }}> satisfaction</span> guarantee!
           </Typography>
 
           {/* reason to choose us */}
@@ -57,7 +50,7 @@ function Satisfaction() {
             sx={{ fontSize: { xs: "1.5em", md: "2em" }, fontWeight: "bolder" }}
           >
             More
-            <span style={{ color: "#9c27b0" }}> Sales!</span>
+            <span style={{ color: "#9c27b0" }}> sales!</span>
           </Typography>
 
           {/* reason to choose us */}
@@ -73,14 +66,13 @@ function Satisfaction() {
             sx={{ fontSize: { xs: "1.5em", md: "2em" }, fontWeight: "bolder" }}
           >
             Fast
-            <span style={{ color: "#9c27b0" }}> Store!</span>
+            <span style={{ color: "#9c27b0" }}> site!</span>
           </Typography>
 
           {/* reason to choose us */}
           <Typography sx={{ width: { xs: "90%", sm: "80%" } }}>
-            Blazing fast user experience.{" "}
-            <strong>Great Shopify speed score</strong>. Fantastic results on
-            Google Core Web Vitals.
+            Blazing fast user experience. <strong>Great speed score</strong>.
+            Fantastic results on Google Core Web Vitals.
           </Typography>
           <Divider />
         </Grid>

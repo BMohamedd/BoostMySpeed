@@ -2,13 +2,21 @@ import { Container, Grid } from "@mui/material";
 import React from "react";
 import parters from "../../../../assets/friends.png";
 import AutoIncrement from "./AutoIncrement";
-import Title from "../../../other/title/Title";
 
 function Parters() {
   return (
     <Container maxWidth="xl" sx={{ mt: "6em" }}>
-      <Title preStrong="Our" strong="Partners:" />
-      <Grid container justifyContent="space-between" alignItems="center">
+      <Grid
+        container
+        justifyContent="space-between"
+        sx={{
+          flexDirection: {
+            xs: "column-reverse",
+            sm: "row",
+          },
+        }}
+        alignItems="center"
+      >
         <Grid item xs={12} sm={5.5}>
           <div
             style={{ width: "100%", display: "flex", justifyContent: "center" }}
@@ -24,7 +32,7 @@ function Parters() {
           <AutoIncrement
             start={17345}
             time={4000}
-            title="pages analized so far"
+            title="Pages analized so far"
             subtitle="Join thousands of people and companies around the world commited to make the web consistantly faster."
           />
         </Grid>

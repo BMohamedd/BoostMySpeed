@@ -25,8 +25,8 @@ export const plansData = [
     features: [
       { name: "Browser caching", included: true },
       { name: "Minification", included: true },
-      { name: "Software version upgrade", included: true },
       { name: "Database optimization", included: true },
+      { name: "Software version upgrade", included: true },
     ],
   },
 ];

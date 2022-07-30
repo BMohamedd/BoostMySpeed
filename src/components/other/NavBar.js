@@ -76,7 +76,7 @@ function NavBar() {
               }}
             >
               <Typography color="secondary" sx={{ fontWeight: "bold" }}>
-                START DEEP SCAN
+                Free speed test
               </Typography>
             </Button>
           </Grid>

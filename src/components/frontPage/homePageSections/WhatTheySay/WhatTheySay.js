@@ -12,7 +12,7 @@ function WhatTheySay() {
       <Container maxWidth="xl">
         <Typography
           component="h3"
-          sx={{ fontSize: "2em", fontWeight: "bold" }}
+          sx={{ fontSize: "3em", fontWeight: "bold" }}
           textAlign="center"
           mb="1em"
         >

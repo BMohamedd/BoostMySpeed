@@ -1,4 +1,4 @@
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import Title from "../../../other/title/Title";
 
@@ -13,10 +13,8 @@ function NoSubSection({ section }) {
                 key={sectionParagraph}
                 sx={{
                   fontSize: "1em",
-                  fontWeight: "bolder",
                   marginTop: "1em",
                 }}
-                color="gray"
               >
                 {sectionParagraph}
               </Typography>

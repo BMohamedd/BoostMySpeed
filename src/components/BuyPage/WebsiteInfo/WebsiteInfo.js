@@ -54,7 +54,7 @@ function WesiteInfo() {
           postStrong="About Your Website:"
         />
         <Typography color="gray" mt="2em" mb="1em">
-          <strong> MAKE SURE THAT THIS INFORMATION IS CORRECT!</strong>
+          <strong> Make sure this information is correct!</strong>
         </Typography>
         {/* we are submitting this form using formsubmit visit their site for more info "formsubmit.co" */}
         <form
@@ -83,7 +83,7 @@ function WesiteInfo() {
                   sx={{ width: "100%" }}
                   type="email"
                   name="email"
-                  helperText="Where Can We Find You?"
+                  helperText="Where can we find you?"
                   maxLength="320"
                   variant="standard"
                   label="Email"
@@ -100,7 +100,7 @@ function WesiteInfo() {
                   name="website"
                   onChange={handleEditWebsite}
                   variant="standard"
-                  helperText="Please Enter A Valid Url"
+                  helperText="Please enter a valid url"
                   error={error ? true : false}
                   maxLength="320"
                   label="website"
@@ -115,7 +115,7 @@ function WesiteInfo() {
                   type="text"
                   name="host Priver"
                   variant="standard"
-                  helperText="Please Enter A Valid Url"
+                  helperText="For example: Namecheap"
                   maxLength="320"
                   label="host provider"
                   required
@@ -125,7 +125,7 @@ function WesiteInfo() {
             <InputLabel id="demo-simple-select-label">website Type</InputLabel>
             <Select
               labelId="demo-simple-select-label"
-              name="website Type"
+              name="website type"
               required
               variant="standard"
               label="Age"
@@ -138,8 +138,8 @@ function WesiteInfo() {
             <TextField
               type="text"
               name="issue"
-              helperText="What Would You like To share?"
-              label="Describe Your issue (max = 900)"
+              helperText="What would you like to share?"
+              label="Describe your issue (max = 900)"
               color="secondary"
               required
               multiline

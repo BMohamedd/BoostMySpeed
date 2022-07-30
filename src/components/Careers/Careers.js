@@ -110,13 +110,7 @@ function Careers() {
             </TableBody>
           </Table>
         </Box>
-        <Box mt="2em">
-          <Alert severity="info">
-            <Link to={{ pathname: "/contact" }}>
-              to Apply to Any of these Jobs Please Contact Us!
-            </Link>
-          </Alert>
-        </Box>
+        <Box mt="2em"></Box>
       </Container>
 
       <Footer />

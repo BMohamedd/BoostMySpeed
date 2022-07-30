@@ -29,7 +29,7 @@ function Comments() {
     },
     {
       name: "Margaret Chang",
-      text: "They are not good, they are amazing doing thier job. they even contacted my hosting service to make sure everything works fine. It is worth every penny invested. I will work with him again.",
+      text: "They are not good, they are amazing doing thier job. they even contacted my hosting service to make sure everything works fine. It is worth every penny invested. I will work with them again.",
       photoURL: "https://i.imgur.com/02c24HZ.jpg",
       occupation: "Junior Website Developer",
     },
@@ -77,7 +77,10 @@ function Comments() {
       <Typography
         component="div"
         mt="1em"
-        sx={{ height: { xs: "300px", sm: "200px" } }}
+        sx={{
+          height: { xs: "300px", sm: "200px" },
+          fontSize: { xs: "1em", md: "1.3em" },
+        }}
       >
         "{Content[displayed].text}"
       </Typography>

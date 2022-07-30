@@ -34,13 +34,6 @@ function MulitpicSection() {
         >
           {/* titles */}
           <Typography
-            color="secondary"
-            component="h3"
-            sx={{ fontSize: "1em", fontWeight: "bolder" }}
-          >
-            Some Reasons
-          </Typography>
-          <Typography
             component="p"
             sx={{ fontSize: "2em", fontWeight: "bolder" }}
           >
@@ -55,8 +48,9 @@ function MulitpicSection() {
           {/* main Section */}
           <MainContent />
           <Button
-            variant="outlined"
+            variant="contained"
             color="secondary"
+            disableElevation
             onClick={() => window.scroll(0, 0)}
           >
             Test My Speed For Free!

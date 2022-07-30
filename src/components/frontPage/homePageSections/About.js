@@ -34,7 +34,7 @@ function About() {
     {
       img: build,
       header: "Page Breakdown",
-      body: "Our Shopify Speed Tool doesn't just analyzes your homepage like other speedcheckers. It crunches thru all the pages of your customers journey giving you a detailed performance report of the home.",
+      body: "Our Speed Tool doesn't just analyzes your homepage like other speedcheckers. It crunches thru all the pages of your customers journey giving you a detailed performance report of the home.",
     },
   ];
   return (
@@ -69,7 +69,7 @@ function About() {
                     gutterBottom
                     variant="h6"
                     component="div"
-                    color="gray"
+                    color="secondary"
                     sx={{ display: "flex", alignItems: "center", gap: "5px" }}
                   >
                     <Icons index={index} />

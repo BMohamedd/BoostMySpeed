@@ -20,14 +20,16 @@ function AutoIncrement({ start, time, title, subtitle }) {
       <Typography
         color="secondary"
         sx={{
-          fontSize: "1.5em",
+          fontSize: { xs: "1em", md: "1.3em", lg: "1.5" },
           display: "flex",
           alignItems: "center",
           gap: "1em",
         }}
       >
         <span style={{ fontSize: "2.5em", fontWeight: "bolder" }}>{Item}</span>
-        <Typography style={{ fontSize: "1.3em" }}>{title}</Typography>
+        <Typography sx={{ fontSize: { xs: "1.3em", md: "1.3em" } }}>
+          {title}
+        </Typography>
       </Typography>
       <Typography color="gray" style={{ fontWeight: "bolder" }}>
         {subtitle}

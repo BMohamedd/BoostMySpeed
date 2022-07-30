@@ -30,7 +30,7 @@ function Footer() {
           <Grid
             container
             justifyContent="space-between"
-            alignItems="center"
+            alignItems="flex-start"
             gap="1em"
           >
             <Grid
@@ -165,31 +165,31 @@ function Footer() {
                 sx={{ textAlign: { xs: "center", md: "start" } }}
               >
                 <Typography fontSize="1.2em" fontWeight="bolder" color="white">
-                  LEGAL
+                  RESOURCES
                 </Typography>
                 <Link
                   style={{ color: "white", textDecoration: "none" }}
                   to={{
-                    pathname: "/Privacy-Policy",
+                    pathname: "/docs",
                   }}
                 >
-                  Privacy Policy
+                  Common errors and solutions
                 </Link>
                 <Link
                   style={{ color: "white", textDecoration: "none" }}
                   to={{
-                    pathname: "/Terms-And-Conditions",
+                    pathname: "/faqs",
                   }}
                 >
-                  Terms And Conditions
+                  FAQs
                 </Link>
                 <Link
                   style={{ color: "white", textDecoration: "none" }}
                   to={{
-                    pathname: "/Privacy-Policy",
+                    pathname: "/careers",
                   }}
                 >
-                  Cookie Policy
+                  Careers
                 </Link>
               </Stack>
             </Grid>

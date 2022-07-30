@@ -14,10 +14,8 @@ function NoSubSection({ section }) {
                 key={sectionParagraph}
                 sx={{
                   fontSize: "1em",
-                  fontWeight: "bolder",
                   marginTop: "1em",
                 }}
-                color="gray"
               >
                 {sectionParagraph}
               </Typography>

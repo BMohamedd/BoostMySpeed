@@ -1,9 +1,7 @@
 import { Divider, Drawer, IconButton, Tooltip } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import ListCom from "./list/List";
-
-import CloseIcon from "@mui/icons-material/Close";
-
+import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 function DocsDrawer({ isOpen, setOpen }) {
   return (
     <Drawer
@@ -20,7 +18,7 @@ function DocsDrawer({ isOpen, setOpen }) {
     >
       <IconButton onClick={() => setOpen(false)}>
         <Tooltip title="Close">
-          <CloseIcon color="error" />
+          <KeyboardDoubleArrowLeftIcon />
         </Tooltip>
       </IconButton>
       <Divider />
